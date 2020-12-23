@@ -1,0 +1,37 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+@layer base {
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-thin text-secondary-700;
+  }
+
+  h1 {
+    @apply text-5xl;
+  }
+
+  h2 {
+    @apply text-primary-600 text-4xl;
+  }
+
+  h3 {
+    @apply font-normal text-2xl;
+  }
+
+  h4 {
+    @apply font-serif text-accent-500 text-lg uppercase;
+  }
+
+  h5 {
+    @apply font-normal text-xl;
+  }
+
+  h6 {
+    @apply font-normal text-gray-500 text-lg;
+  }
+
+}
