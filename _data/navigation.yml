@@ -1,0 +1,15 @@
+- name: "Dashboard"
+  link: "/"
+  icon: "ri-dashboard-3-line"
+
+- name: "Guidelines"
+  link: "/guidelines/"
+  icon: "ri-file-list-3-line"
+
+- name: "Styles"
+  link: "/styles/"
+  icon: "ri-paint-brush-line"
+
+- name: "Components"
+  link: "/components/"
+  icon: "ri-dashboard-line"
