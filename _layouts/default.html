@@ -3,12 +3,12 @@
 
 {% include head.html %}
 <main class="flex h-screen items-center justify-center w-full">
-  <div class="bg-secondary-800 border-r border-secondary-200 h-screen pb-4 overflow-y-auto w-64">
+  <div class="bg-secondary-800 border-r border-secondary-200 flex flex-col h-screen pb-4 w-64">
     {% include sidebar.html %}
   </div>
-  <div class="bg-secondary-100 flex-grow h-screen">
+  <div class="bg-secondary-100 flex flex-col flex-grow h-screen">
     {% include searchbar.html %}
-    <div class="container mx-auto px-24 py-16">
+    <div class="container flex-grow mx-auto overflow-y-auto px-24 py-16">
 
       {% if page.category %}
         <h4 class="leading-5">{{ page.category }}</h4>
