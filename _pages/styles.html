@@ -2,6 +2,17 @@
 title: Styles
 layout: default
 permalink: /styles/
+
+# Content for Dashboard
+excerpt: "This section is kinda pointless right now, as I don't know what to put in it or if it's even needed."
 ---
 
-These are the Styles
+<div class="gap-6 grid grid-cols-3 pt-8">
+  {% for page in site.pages %}
+    {% if page.category == "Styles" %}
+    <div class="bg-white p-6 rounded">
+      <h3 class="mb-2">{{ page.title }}</h3>
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
