@@ -2,22 +2,47 @@
 ---
 
 {% include head.html %}
-<main class="flex h-screen items-center justify-center w-full">
+<header class="flex items-center w-full">
+  <div class="bg-secondary-800 border-r border-secondary-200 w-64">
+    <div class="bg-secondary-800 border-b border-secondary-700 h-20 px-4">
+      <h1 class="flex h-full items-center pb-2">
+        <span class="font-extrabold mr-2 text-primary-500 text-6xl">KW</span>
+        <span class="font-serif leading-5 pt-1 text-secondary-400 text-base">UI/UX<br>Design System</span>
+      </h1>
+    </div>
+  </div>
+  <div class="bg-secondary-100 flex-1 flex-grow w-0">
+    {% include searchbar.html %}
+  </div>
+</header>
+
+<main class="flex h-screen w-full">
   <div class="bg-secondary-800 border-r border-secondary-200 flex flex-col h-screen pb-4 w-64">
     {% include sidebar.html %}
   </div>
-  <div class="bg-secondary-100 flex flex-col flex-grow h-screen">
-    {% include searchbar.html %}
-    <div class="container flex-grow mx-auto overflow-y-auto px-24 py-16">
+  <div class="bg-secondary-100 flex-1 flex-grow overflow-y-auto px-24 py-16 w-0">
+    {% if page.title != blank %}
+      {% if page.url != "/" and page.category != null %}
 
-      {% if page.category %}
-        <h4 class="leading-5">{{ page.category }}</h4>
-      {% endif %}
-      {% if page.url != "/" and page.title != blank %}
+      <div class="w-full lg:w-3/4">
+        {% if page.category %}
+          <h4 class="leading-5">{{ page.category }}</h4>
+        {% endif %}
         <h1>{{ page.title }}</h1>
+        {{ content }}
+      </div>
+
+      {% elsif page.url != "/" and page.category == null %}
+
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+
+      {% else %}
+
+        {{ content }}
+
       {% endif %}
-      {{ content }}
-    </div>
+    {% endif %}
   </div>
 </main>
 
