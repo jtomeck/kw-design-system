@@ -42,4 +42,31 @@
     @apply mb-4;
   }
 
+  .burger {
+    @apply block mr-3;
+    height: 20px;
+    width: 20px;
+  }
+
+  .burger span {
+    @apply bg-white block my-1 rounded-full w-full;
+    height: 2px;
+  }
+
+  #menu {
+    @apply -left-64 lg:left-auto;
+  }
+
+  #menu.toggled {
+    @apply fixed shadow-2xl w-64 z-30;
+    bottom: 0;
+    left: 0;
+    top: 80px;
+  }
+
+  .main-content {
+    @apply flex w-full;
+    height: calc(100vh - 80px); /* 100vh - { height of topbar } */
+  }
+
 }

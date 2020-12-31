@@ -5,11 +5,16 @@
 
 <!-- Site Header (logo and searchbar) -->
 <header class="flex items-center w-full">
-  <div class="bg-secondary-800 w-64">
-    <div class="bg-secondary-800 border-b border-secondary-700 h-20 px-4">
-      <h1 class="flex h-full items-center pb-2">
-        <span class="font-extrabold mr-2 text-primary-500 text-6xl">KW</span>
-        <span class="font-serif leading-5 pt-1 text-secondary-400 text-base">UI/UX<br>Design System</span>
+  <div class="bg-secondary-800 lg:w-64">
+    <div class="bg-secondary-800 border-b border-secondary-700 flex h-20 items-center px-4">
+      <a href="#" id="menuToggle" class="burger lg:hidden">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <h1 class="flex flex-wrap items-center lg:pb-2">
+        <span class="font-extrabold mr-1 lg:mr-2 text-primary-500 text-2xl lg:text-6xl">KW</span>
+        <span class="block lg:inline font-serif text-secondary-400 text-xs lg:text-base">UI/UX <span class="lg:block hidden leading-4">Design System</span></span>
       </h1>
     </div>
   </div>
@@ -19,11 +24,11 @@
 </header>
 
 <!-- Content Area -->
-<main class="flex h-screen w-full">
-  <div class="bg-secondary-800 flex flex-col h-screen pb-4 w-64">
+<main class="main-content">
+  <div id="menu" class="bg-secondary-800 fixed lg:flex flex-col h-screen pb-4 lg:relative transition-all w-64  z-30">
     {% include sidebar.html %}
   </div>
-  <div class="bg-secondary-100 flex-1 flex-grow overflow-y-auto px-24 py-16 w-0">
+  <div class="bg-secondary-100 flex-1 flex-grow overflow-y-auto p-8 lg:px-24 lg:py-16 w-0">
     {% if page.title != blank %}
       {% if page.url != "/" and page.category != null %}
 
