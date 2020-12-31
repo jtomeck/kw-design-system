@@ -53,8 +53,12 @@
     height: 2px;
   }
 
-  .menu-toggled {
-    @apply shadow-2xl left-0 !important;
+  .navmenu {
+    @apply bg-secondary-800 bottom-0 fixed lg:flex flex-col h-screen -left-64 lg:left-auto pb-4 lg:static top-20 transition-all w-64 z-30;
+  }
+
+  .navmenu.menu-toggled {
+    @apply shadow-2xl left-0;
   }
 
   .main-content {
