@@ -4,28 +4,30 @@
 {% include head.html %}
 
 <!-- Site Header (logo and searchbar) -->
-<header class="flex items-center w-full">
-  <div class="bg-secondary-800 lg:w-64">
-    <div class="bg-secondary-800 border-b border-secondary-700 flex h-20 items-center px-4">
-      <div class="burger lg:hidden">
-        <span></span>
-        <span></span>
-        <span></span>
+<header class="flex flex-wrap items-center w-full">
+  <div class="bg-secondary-800 w-full lg:w-64">
+    <div class="bg-secondary-800 border-b border-secondary-700 flex h-20 items-center lg:px-4">
+      <div class="bg-secondary-700 burger-button cursor-pointer flex h-20 lg:hidden items-center justify-center mr-5 opacity-75 w-20">
+        <div class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <h1 class="flex flex-wrap items-center lg:pb-2">
-        <span class="font-extrabold mr-1 lg:mr-2 text-primary-500 text-2xl lg:text-6xl">KW</span>
-        <span class="block lg:inline font-serif text-secondary-400 text-xs lg:text-base">UI/UX <span class="lg:block hidden leading-4">Design System</span></span>
+      <h1 class="flex flex-wrap items-center pb-1">
+        <span class="font-extrabold mr-2 text-primary-500 text-6xl">KW</span>
+        <span class="font-serif text-secondary-400 text-base">UI/UX <span class="block leading-4">Design System</span></span>
       </h1>
     </div>
   </div>
-  <div class="bg-secondary-100 flex-1 flex-grow w-0">
+  <div class="bg-secondary-100 w-full lg:flex-1 lg:flex-grow lg:w-0">
     {% include searchbar.html %}
   </div>
 </header>
 
 <!-- Content Area -->
 <main class="main-content">
-  <div id="menu" class="navmenu closed bg-secondary-800 bottom-0 fixed lg:static top-20 w-64 z-30">
+  <div id="menu" class="navmenu closed bg-secondary-800 bottom-0 fixed lg:static top-20 w-64 z-60">
     {% include sidebar.html %}
   </div>
   <div class="bg-secondary-100 flex-1 flex-grow overflow-y-auto p-8 lg:px-24 lg:py-16 w-0">
