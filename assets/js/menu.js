@@ -1,15 +1,10 @@
 $(document).ready(function(){
   $('.burger').click(function(){
     if( $('.navmenu').hasClass('closed') ){
-      $('.navmenu').removeClass('closed');
-      $('.navmenu').animate({
-        left: '0'
-      }, "fast");
+      $('.navmenu').stop().animate({left: '0'},200);
     } else {
-      $('.navmenu').animate({
-        left: '-16rem'
-      }, "fast");
-      $('.navmenu').addClass('closed');
+      $('.navmenu').stop().animate({left: '-16rem'},200);
     }
+    $('.navmenu').toggleClass('closed shadow-2xl');
   });
 });
