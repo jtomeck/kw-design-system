@@ -2,8 +2,10 @@
 ---
 
 {% include head.html %}
+
+<!-- Site Header (logo and searchbar) -->
 <header class="flex items-center w-full">
-  <div class="bg-secondary-800 border-r border-secondary-200 w-64">
+  <div class="bg-secondary-800 w-64">
     <div class="bg-secondary-800 border-b border-secondary-700 h-20 px-4">
       <h1 class="flex h-full items-center pb-2">
         <span class="font-extrabold mr-2 text-primary-500 text-6xl">KW</span>
@@ -16,8 +18,9 @@
   </div>
 </header>
 
+<!-- Content Area -->
 <main class="flex h-screen w-full">
-  <div class="bg-secondary-800 border-r border-secondary-200 flex flex-col h-screen pb-4 w-64">
+  <div class="bg-secondary-800 flex flex-col h-screen pb-4 w-64">
     {% include sidebar.html %}
   </div>
   <div class="bg-secondary-100 flex-1 flex-grow overflow-y-auto px-24 py-16 w-0">
