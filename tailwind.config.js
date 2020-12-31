@@ -15,13 +15,19 @@ module.exports = {
       fontSize: {
         '2xs': '.6rem',
       },
+      transitionProperty: {
+        'bottom': 'bottom',
+        'left': 'left',
+        'right': 'right',
+        'top': 'top'
+      },
     },
   },
   variants: {
     extend: {
       borderWidth: ['hover','focus'],
       fontSize: ['hover','group-hover'],
-      padding: ['hover','group-hover']
+      padding: ['hover','group-hover'],
     }
   },
   plugins: [],
