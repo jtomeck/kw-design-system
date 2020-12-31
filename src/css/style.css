@@ -54,12 +54,7 @@
   }
 
   .menu-toggled {
-    @apply bottom-0 fixed shadow-2xl left-0 w-64 z-30;
-    top: 80px;
-  }
-
-  .navmenu {
-    @apply -left-64 lg:left-auto;
+    @apply shadow-2xl left-0 !important;
   }
 
   .main-content {
