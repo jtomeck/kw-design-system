@@ -43,7 +43,7 @@
   }
 
   .burger {
-    @apply block mr-3;
+    @apply block;
     height: 20px;
     width: 20px;
   }
