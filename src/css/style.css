@@ -53,6 +53,10 @@
     height: 2px;
   }
 
+  .closed {
+     @apply -left-64 lg:left-auto;
+  }
+
   .main-content {
     @apply flex w-full;
     height: calc(100vh - 80px); /* 100vh - { height of topbar } */

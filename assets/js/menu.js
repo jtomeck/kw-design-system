@@ -1,11 +1,15 @@
 $(document).ready(function(){
   $('.burger').click(function(){
-    if( $('.navmenu').hasClass('-left-64') ){
-      $('.navmenu').removeClass('-left-64');
-      $('.navmenu').addClass('left-0 shadow-2xl');
+    if( $('.navmenu').hasClass('closed') ){
+      $('.navmenu').removeClass('closed');
+      $('.navmenu').animate({
+        left: '0'
+      }, "fast");
     } else {
-      $('.navmenu').removeClass('left-0 shadow-2xl');
-      $('.navmenu').addClass('-left-64');
+      $('.navmenu').animate({
+        left: '-16rem'
+      }, "fast");
+      $('.navmenu').addClass('closed');
     }
   });
 });
