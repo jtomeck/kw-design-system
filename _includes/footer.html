@@ -16,6 +16,16 @@
         searchResultTemplate: results,
         noResultsText: '<li class="flex items-center p-5 text-white"><i class="ri-emotion-unhappy-line mr-3 text-xl"></i>No results. Refine your search and try again.</li>'
       })
+
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
     </script>
 
   </body>
