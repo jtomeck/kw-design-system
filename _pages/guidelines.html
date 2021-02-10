@@ -8,16 +8,14 @@ excerpt: "In this section you will find a list of common UI/UX patterns, as well
 ---
 
 <div class="gap-6 grid grid-cols-3 pt-8">
-  {% for page in site.pages %}
-    {% if page.category == "Guidelines" %}
+  {% for guideline in site.guidelines %}
     <div class="bg-white p-6 rounded">
-      <h3 class="mb-2">{{ page.title }}</h3>
-      {{ page.excerpt }}
-      <a href="{{ site.baseurl }}{{ page.permalink }}" class="bg-primary-50 block duration-200 flex group h-12 items-center justify-between mt-4 px-3 py-2 rounded text-primary-500 transition-all w-full hover:bg-primary-100 hover:text-primary-700">
-        Learn about {{ page.title }}
+      <h3 class="mb-2">{{ guideline.title }}</h3>
+      {{ guideline.excerpt }}
+      <a href="{{ guideline.url }}" class="bg-primary-50 block duration-200 flex group h-12 items-center justify-between mt-4 px-3 py-2 rounded text-primary-500 transition-all w-full hover:bg-primary-100 hover:text-primary-700">
+        Learn about {{ guideline.title }}
         <i class="ri-arrow-right-s-line text-base transition-all group-hover:text-xl"></i>
       </a>
     </div>
-    {% endif %}
   {% endfor %}
 </div>

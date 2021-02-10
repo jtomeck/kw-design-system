@@ -1,29 +1,47 @@
 <div class="h-full overflow-y-auto">
-  {% if site.data.navigation  %}
+  {% if site.pages  %}
   <nav class="flex-1 pl-2 py-4 space-y-1" aria-label="Sidebar">
-    {% for item in site.data.navigation %}
-      <div class="nav-item text-sm">
-        <a href="{{ site.baseurl }}{{ item.link }}" class="flex group items-center justify-between px-3 py-2 rounded-l-full {% if page.url == item.link %}bg-secondary-700 text-secondary-200{% else %} text-secondary-400 hover:border-accent-500 hover:text-secondary-200{% endif %}">
-          <span class="flex items-center">
-            <i class="{{ item.icon }} mr-3 text-xl {% if page.url == item.link %}text-accent-500{% else %}text-secondary-600 group-hover:text-accent-500{% endif %}"></i>
-            {{ item.name }}
-          </span>
-          {% if item.dropdown %}
-            <span class="bg-primary-500 px-2 rounded-full text-white text-xs">{{ item.dropdown.size }}</span>
+    <div class="nav-item {% if page.url == '/' %}active{% endif %}">
+      <a href="{{ site.baseurl }}">
+        <span class="flex items-center">
+          <i class="ri-dashboard-3-line"></i>
+          Dashboard
+        </span>
+      </a>
+    </div>
+
+    {% for collection in site.collections %}
+      {% if collection.label != "posts" %}
+        <div class="nav-item {% if page.url == collection.archive_url or collection.label == page.collection %}active{% endif %}">
+          <a href="{{ collection.archive_url }}">
+            <span class="flex items-center">
+              <i class="{{ collection.icon }}"></i>
+              {{ collection.title }}
+            </span>
+          </a>
+
+          {% assign csize = collection.docs | size %}
+          {% if csize > 0 %}
+
+
+            {% if collection.title == page.title or collection.label == page.collection %}
+            <div class="dropdown">
+              {% for item in collection.docs %}
+                <a href="{{ item.url }}" class="{% if page.url == item.url or page.collection == page.title %}active{% endif %}">
+                  <span class="flex items-center">
+                    <i class="ri-arrow-drop-right-line"></i>
+                    {{ item.title }}
+                  </span>
+                </a>
+              {% endfor %}
+            </div>
+            {% endif %}
           {% endif %}
-        </a>
-        {% if item.dropdown %}
-          <div class="dropdown {% unless item.name == page.title or item.name == page.category %} hidden{% endunless %} pb-2 pl-7 pt-1 space-y-1 transition-all">
-            {% for subitem in item.dropdown %}
-              <a href="{{ site.baseurl }}{{ subitem.link }}" class="flex group items-center px-2 py-1 rounded-l-full {% if page.url == subitem.link %}bg-secondary-700 text-secondary-200{% else %} text-secondary-400 hover:border-accent-500 hover:text-secondary-200{% endif %}">
-                <i class="ri-arrow-drop-right-line mr-2 text-xl {% if page.url == subitem.link %}text-accent-500{% else %}text-secondary-600 group-hover:text-accent-500{% endif %}"></i>
-                {{ subitem.name }}
-              </a>
-            {% endfor %}
-          </div>
-        {% endif %}
-      </div>
+        </div>
+      {% endif %}
     {% endfor %}
+
+
   </nav>
   {% endif %}
 </div>

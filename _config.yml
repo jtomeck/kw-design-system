@@ -1,5 +1,6 @@
 title: KW UI/UX Design System
 description: A guide for designers and developers at Kitware.
+baseurl: /
 
 include: ['_pages']
 
@@ -15,3 +16,19 @@ exclude:
   - src
   - tailwind.config.js
   - netlify.toml
+
+collections:
+
+  guidelines:
+    archive_url: /guidelines/
+    icon: ri-file-list-3-line
+    output: true
+    permalink: /:collection/:name
+    title: Guidelines
+
+  components:
+    archive_url: /components/
+    icon: ri-dashboard-line
+    output: true
+    permalink: /:collection/:name
+    title: Components
