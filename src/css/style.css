@@ -68,7 +68,7 @@
   }
 
   .navmenu .nav-item a {
-    @apply border-r-4 border-transparent flex group items-center justify-between px-3 py-2 text-secondary-400;
+    @apply border-r-4 border-transparent flex items-center justify-between p-2 text-secondary-400;
   }
 
   .navmenu .nav-item a:hover,
@@ -85,12 +85,8 @@
     @apply text-accent-500;
   }
 
-  .navmenu .nav-item .dropdown {
-    @apply pb-2;
-  }
-
   .navmenu .nav-item .dropdown a {
-    @apply pl-10 py-1 text-secondary-400;
+    @apply pl-8 py-1 text-secondary-400;
   }
 
   .navmenu .nav-item .dropdown a:hover,

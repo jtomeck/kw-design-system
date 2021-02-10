@@ -12,18 +12,21 @@
 
     {% for collection in site.collections %}
       {% if collection.label != "posts" %}
+
+        {% assign csize = collection.docs | size %}
+
         <div class="nav-item {% if page.url == collection.archive_url or collection.label == page.collection %}active{% endif %}">
           <a href="{{ collection.archive_url }}">
             <span class="flex items-center">
               <i class="{{ collection.icon }}"></i>
               {{ collection.title }}
             </span>
+            <span class="mr-2 text-secondary-500 text-xs">
+              {{ csize }}
+            </span>
           </a>
 
-          {% assign csize = collection.docs | size %}
           {% if csize > 0 %}
-
-
             {% if collection.title == page.title or collection.label == page.collection %}
             <div class="dropdown">
               {% for item in collection.docs %}
