@@ -62,4 +62,44 @@
     height: calc(100vh - 80px); /* 100vh - { height of topbar } */
   }
 
+  /* Navigation Styles */
+  .navmenu .nav-item {
+    @apply text-sm;
+  }
+
+  .navmenu .nav-item a {
+    @apply border-r-4 border-transparent flex group items-center justify-between px-3 py-2 text-secondary-400;
+  }
+
+  .navmenu .nav-item a:hover,
+  .navmenu .nav-item.active a {
+    @apply bg-gradient-to-r border-accent-500 from-transparent to-secondary-700 text-secondary-200;
+  }
+
+  .navmenu .nav-item a i {
+    @apply mr-3 text-secondary-600 text-xl;
+  }
+
+  .navmenu .nav-item a:hover i,
+  .navmenu .nav-item.active a i {
+    @apply text-accent-500;
+  }
+
+  .navmenu .nav-item .dropdown {
+    @apply pb-2;
+  }
+
+  .navmenu .nav-item .dropdown a {
+    @apply pl-10 py-1 text-secondary-400;
+  }
+
+  .navmenu .nav-item .dropdown a:hover,
+  .navmenu .nav-item .dropdown a.active {
+    @apply border-accent-400 text-white to-secondary-600;
+  }
+
+  .navmenu .nav-item .dropdown a i {
+    @apply mr-1;
+  }
+
 }
