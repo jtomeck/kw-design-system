@@ -18,6 +18,10 @@ collections:
       - label: 'Alerts'
         name: 'alerts'
         file: 'alerts.html'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'hidden', default: 'alerts' }
+          - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'alerts' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
   - name: 'guidelines'
     label: 'Guidelines'
     folder: '_guidelines/'
