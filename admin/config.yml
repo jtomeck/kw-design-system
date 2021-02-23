@@ -1,0 +1,21 @@
+# config.yml
+
+backend:
+  name: git-gateway
+  branch: integrate-netlify-cms # Branch to update (optional; defaults to master)
+
+local_backend: true
+
+media_folder: 'assets/uploads'
+
+collections:
+  - name: 'components'
+    label: 'Components'
+    folder: 'site/components/'
+    fields:
+      - { name: Title }
+  - name: 'guidelines'
+    label: 'Guidelines'
+    folder: 'site/guidelines/'
+    fields:
+      - { name: Title }
