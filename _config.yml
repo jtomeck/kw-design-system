@@ -18,7 +18,6 @@ exclude:
   - netlify.toml
 
 collections:
-
   guidelines:
     archive_url: /guidelines/
     icon: ri-file-list-3-line
