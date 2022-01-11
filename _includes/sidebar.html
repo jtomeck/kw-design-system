@@ -1,50 +1,53 @@
-<div class="h-full overflow-y-auto">
-  {% if site.pages  %}
-  <nav class="flex-1 pl-2 py-4 space-y-1" aria-label="Sidebar">
-    <div class="nav-item {% if page.url == '/' %}active{% endif %}">
-      <a href="{{ site.baseurl }}">
-        <span class="flex items-center">
-          <i class="ri-dashboard-3-line"></i>
-          Dashboard
-        </span>
-      </a>
-    </div>
+<div class="bg-white h-full overflow-y-auto">
+    {% if site.pages  %}
 
-    {% for collection in site.collections %}
-      {% if collection.label != "posts" %}
-
-        {% assign csize = collection.docs | size %}
-
-        <div class="nav-item {% if page.url == collection.archive_url or collection.label == page.collection %}active{% endif %}">
-          <a href="{{ collection.archive_url }}">
-            <span class="flex items-center">
-              <i class="{{ collection.icon }}"></i>
-              {{ collection.title }}
-            </span>
-            <span class="mr-2 text-secondary-500 text-xs">
-              {{ csize }}
-            </span>
-          </a>
-
-          {% if csize > 0 %}
-            {% if collection.title == page.title or collection.label == page.collection %}
-            <div class="dropdown">
-              {% for item in collection.docs %}
-                <a href="{{ item.url }}" class="{% if page.url == item.url or page.collection == page.title %}active{% endif %}">
-                  <span class="flex items-center">
-                    <i class="ri-arrow-drop-right-line"></i>
-                    {{ item.title }}
-                  </span>
+        <ul class="menu p-4">
+            <li>
+                <a href="{{ site.baseurl }}" class="{% if page.url == '/' %}active{% endif %}">
+                    <span class="flex items-center">
+                        <i class="ri-dashboard-3-line mr-2"></i>
+                        Dashboard
+                    </span>
                 </a>
-              {% endfor %}
-            </div>
-            {% endif %}
-          {% endif %}
-        </div>
-      {% endif %}
-    {% endfor %}
+            </li> 
 
+            {% for collection in site.collections %}
+                {% if collection.label != "posts" %}
 
-  </nav>
-  {% endif %}
+                    {% assign csize = collection.docs | size %}
+
+                    <li>
+                        <a href="{{ collection.archive_url }}" class="flex justify-between {% if page.url == collection.archive_url or collection.label == page.collection %}active{% endif %}">
+                            <span class="flex items-center">
+                                <i class="{{ collection.icon }} mr-2"></i>
+                                {{ collection.title }}
+                            </span>
+                            <span class="text-xs">
+                                {{ csize }}
+                            </span>
+                        </a>
+
+                        <!-- Dropdown -->
+                        {% if csize > 0 %}
+                            {% if collection.title == page.title or collection.label == page.collection %}
+                                <ul class="menu my-2 !pl-0">
+                                    {% for item in collection.docs %}
+                                    <li>
+                                        <a href="{{ item.url }}" class="{% if page.url == item.url or page.collection == page.title %}active{% endif %} !py-2 !pl-8">
+                                            <span class="flex items-center">
+                                                <i class="ri-arrow-drop-right-line"></i>
+                                                {{ item.title }}
+                                            </span>
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endif %}
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+
+    {% endif %}
 </div>
