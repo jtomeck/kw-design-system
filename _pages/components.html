@@ -7,15 +7,19 @@ permalink: /components/
 excerpt: "This section is not meant to be a list of plug and play components, because components and how to build them will vary from framework to framework. It will give you use cases and best practices for each."
 ---
 
-<div class="gap-6 grid grid-cols-3 pt-8">
+<div class="cards-grid">
   {% for component in site.components %}
-    <div class="bg-white p-6 rounded">
-      <h3 class="mb-2">{{ component.title }}</h3>
-      {{ page.excerpt }}
-      <a href="{{ component.url | relative_url }}" class="bg-primary-50 block duration-200 flex group h-12 items-center justify-between mt-4 px-3 py-2 rounded text-primary-500 transition-all w-full hover:bg-primary-100 hover:text-primary-700">
-        Learn about {{ component.title }}
-        <i class="ri-arrow-right-s-line text-base transition-all group-hover:text-xl"></i>
-      </a>
+    <div class="bg-white card rounded">
+      <div class="card-body">
+        <h3 class="card-title text-neutral-focus mb-2">{{ component.title }}</h3>
+        <p class="mb-4">{{ page.excerpt }}</p>
+        <div class="card-actions">
+          <a href="{{ component.url | relative_url }}" class="btn">
+            Learn about {{ component.title }}
+            <i class="ri-arrow-right-s-line text-base ml-4"></i>
+          </a>
+        </div>
+      </div>
     </div>
   {% endfor %}
 </div>

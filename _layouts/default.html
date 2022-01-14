@@ -26,12 +26,12 @@
 </header>
 
 <!-- Content Area -->
-<main class="main-content">
+<main class="site-body">
   <div class="nav-overlay bg-neutral-focus fixed opacity-75 hidden inset-0 z-40"></div>
   <div id="menu" class="navmenu closed bottom-0 fixed lg:static top-20 w-64 z-50">
     {% include sidebar.html %}
   </div>
-  <div class="flex-1 flex-grow overflow-y-auto p-8 lg:px-24 lg:py-16 w-0">
+  <div class="main-content">
     {% if page.title != blank %}
       {% if page.url != "/" and page.collection != null %}
 

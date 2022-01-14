@@ -5,8 +5,9 @@
 /* All Custom CSS here */
 @layer base {
 
+  html,
   body {
-    @apply h-screen overflow-hidden;
+    @apply h-full;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -41,6 +42,10 @@
     @apply mb-4;
   }
 
+  /* Nav Styles
+    | Styles for navigation responsiveness
+  */
+
   .burger {
     @apply block;
     height: 20px;
@@ -55,9 +60,22 @@
     @apply -left-64 lg:left-auto;
   }
 
+  /* Main Site Styles */
+
+  .site-body {
+    @apply flex w-full h-[calc(100vh-146px)] lg:h-[calc(100vh-80px)];
+    
+  }
+
   .main-content {
-    @apply flex w-full;
-    height: calc(100vh - 80px); /* 100vh - { height of topbar } */
+    @apply flex-1 flex-grow overflow-y-auto p-8 lg:px-24 lg:py-16 w-0;
+    & > h1 {
+      @apply mb-10;
+    }
+  }
+
+  .cards-grid {
+    @apply grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6 pb-6;
   }
 
   /* Search Styles

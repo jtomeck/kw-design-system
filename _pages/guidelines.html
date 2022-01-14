@@ -7,15 +7,19 @@ permalink: /guidelines/
 excerpt: "In this section you will find a list of common UI/UX patterns, as well as how you should approach different scenarios when these patterns must be used."
 ---
 
-<div class="gap-6 grid grid-cols-3 pt-8">
+<div class="cards-grid">
   {% for guideline in site.guidelines %}
-    <div class="bg-white p-6 rounded">
-      <h3 class="mb-2">{{ guideline.title }}</h3>
-      {{ guideline.excerpt }}
-      <a href="{{ guideline.url | relative_url }}" class="bg-primary-50 block duration-200 flex group h-12 items-center justify-between mt-4 px-3 py-2 rounded text-primary-500 transition-all w-full hover:bg-primary-100 hover:text-primary-700">
-        Learn about {{ guideline.title }}
-        <i class="ri-arrow-right-s-line text-base transition-all group-hover:text-xl"></i>
-      </a>
+    <div class="bg-white card rounded">
+      <div class="card-body">
+        <h3 class="mb-2 text-neutral-focus card-title">{{ guideline.title }}</h3>
+        <p class="mb-4">{{ guideline.excerpt }}</p>
+        <div class="card-actions">
+          <a href="{{ guideline.url | relative_url }}" class="btn">
+            Learn about {{ guideline.title }}
+            <i class="ri-arrow-right-s-line text-base ml-4"></i>
+          </a>
+        </div>
+      </div>
     </div>
   {% endfor %}
 </div>
