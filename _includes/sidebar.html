@@ -1,7 +1,7 @@
 <div class="bg-white h-full overflow-y-auto">
     {% if site.pages  %}
 
-        <ul class="menu p-4">
+        <ul class="menu space-y-1 p-4">
             <li>
                 <a href="{{ site.baseurl }}" class="{% if page.url == '/' %}active{% endif %}">
                     <span class="flex items-center">
@@ -17,7 +17,7 @@
                     {% assign csize = collection.docs | size %}
 
                     <li>
-                        <a href="{{ collection.archive_url }}" class="flex justify-between {% if page.url == collection.archive_url or collection.label == page.collection %}active{% endif %}">
+                        <a href="{{ collection.archive_url }}" class="flex justify-between {% if page.url == collection.archive_url %}active{% endif %}">
                             <span class="flex items-center">
                                 <i class="{{ collection.icon }} mr-2"></i>
                                 {{ collection.title }}
@@ -30,7 +30,7 @@
                         <!-- Dropdown -->
                         {% if csize > 0 %}
                             {% if collection.title == page.title or collection.label == page.collection %}
-                                <ul class="menu my-2 !pl-0">
+                                <ul class="menu my-2 space-y-1 !pl-0">
                                     {% for item in collection.docs %}
                                     <li>
                                         <a href="{{ item.url }}" class="{% if page.url == item.url or page.collection == page.title %}active{% endif %} !py-2 !pl-8">
