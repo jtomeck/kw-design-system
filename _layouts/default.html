@@ -5,7 +5,7 @@
 
 <!-- Site Header (logo and searchbar) -->
 <header class="flex flex-wrap items-center w-full">
-  <div class="bg-white w-full lg:w-64 z-20">
+  <div class="bg-white w-full z-50 lg:w-64 lg:z-20">
     <div class="border-b-2 border-gray-200 flex h-20 items-center lg:px-4">
       <div class="burger-button cursor-pointer flex h-20 lg:hidden items-center justify-center mr-5 opacity-75 w-20">
         <div class="burger">
@@ -27,6 +27,7 @@
 
 <!-- Content Area -->
 <main class="main-content">
+  <div class="nav-overlay bg-neutral-focus fixed opacity-75 hidden inset-0 z-40"></div>
   <div id="menu" class="navmenu closed bottom-0 fixed lg:static top-20 w-64 z-50">
     {% include sidebar.html %}
   </div>
