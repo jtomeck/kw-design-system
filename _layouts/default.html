@@ -5,8 +5,8 @@
 
 <!-- Site Header (logo and searchbar) -->
 <header class="flex flex-wrap items-center w-full">
-  <div class="bg-white w-full lg:w-64">
-    <div class="border-b border-gray-200 flex h-20 items-center lg:px-4">
+  <div class="bg-white w-full lg:w-64 z-20">
+    <div class="border-b-2 border-gray-200 flex h-20 items-center lg:px-4">
       <div class="burger-button cursor-pointer flex h-20 lg:hidden items-center justify-center mr-5 opacity-75 w-20">
         <div class="burger">
           <span></span>
@@ -20,7 +20,7 @@
       </h1>
     </div>
   </div>
-  <div class="bg-secondary-100 w-full lg:flex-1 lg:flex-grow lg:w-0">
+  <div class="bg-secondary-100 w-full lg:flex-1 lg:flex-grow lg:w-0 z-10">
     {% include searchbar.html %}
   </div>
 </header>
