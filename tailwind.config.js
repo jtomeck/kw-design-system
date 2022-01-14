@@ -1,10 +1,13 @@
 // tailwind.config.js
 module.exports = {
   content: [
-    './_includes/**/*.html',
-    './_layouts/**/*.html',
+    './_includes/*.html',
+    './_guidelines/*.html',
+    './_components/*.html',
+    './_layouts/*.html',
     './_posts/*.html',
-    './_pages/*.html'
+    './_pages/*.html',
+    './assets/js/*.js'
   ],
   theme: {
     fontFamily: {
@@ -32,7 +35,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        'mytheme': {
+        'kw-design-system': {
           'primary': '#0068c7',
           'primary-focus': '#00559e',
           'primary-content': '#ffffff',
