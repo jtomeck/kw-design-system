@@ -6,5 +6,6 @@ $(document).ready(function(){
       $('.navmenu').stop().animate({left: '-16rem'},200);
     }
     $('.navmenu').toggleClass('closed shadow-2xl');
+    $('.nav-overlay').toggleClass('hidden');
   });
 });
