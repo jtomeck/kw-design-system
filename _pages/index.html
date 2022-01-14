@@ -5,7 +5,7 @@ permalink: '/'
 ---
 
 <div class="xl:grid xl:gap-10 xl:grid-cols-3">
-  <div class="bg-white lg:col-span-2 flex justify-between px-10 py-8 rounded shadow-xl">
+  <div class="bg-neutral text-white lg:col-span-2 flex justify-between px-10 py-8 rounded">
     <div class="w-1/2">
       <h2 class="mb-4">The Kitware UI/UX design system</h2>
       <p>Kitware's applications are more than just a composition of reusable UI components. There should be structure and meaningful interactions. This design system will help both designers and developers keep consistent across the board by defining Kitware's way of thinking about UI/UX.</p>
@@ -16,14 +16,18 @@ permalink: '/'
   </div>
   {% for page in site.pages %}
     {% if page.category == null and page.url != "/" and page.title != nil %}
-      {% capture thecycle %}{% cycle 'primary', 'secondary', 'accent' %}{% endcapture %}
-      <div class="bg-{{ thecycle }}-500 flex flex-col xl:m-0 my-8 px-10 py-8 rounded shadow-xl text-white">
-        <h3 class="mb-2 text-{{ thecycle }}-200 text-light">{{ page.title }}</h3>
-        <p class="flex-grow mb-4 text-white">{{ page.excerpt }}</p>
-        <a href="{{ site.baseurl }}{{ page.permalink }}" class="bg-white block duration-200 flex group h-12 items-center justify-between px-3 py-2 rounded text-{{ thecycle }}-500 transition-all w-full hover:bg-{{ thecycle }}-100">
-          Learn about {{ page.title }}
-          <i class="ri-arrow-right-s-line text-base transition-all group-hover:text-xl"></i>
-        </a>
+    {% capture thecycle %}{% cycle 'border-primary', 'border-secondary', 'border-accent' %}{% endcapture %}
+      <div class="border-t-4 {{ thecycle }} bg-white card rounded">
+        <div class="card-body">
+          <h3 class="mb-2 text-neutral-focus text-light card-title">{{ page.title }}</h3>
+          <p class="mb-4 text-neutral">{{ page.excerpt }}</p>
+          <div class="card-actions">
+            <a href="{{ site.baseurl }}{{ page.permalink }}" class="btn">
+              Learn about {{ page.title }}
+              <i class="ri-arrow-right-s-line text-base transition-all group-hover:text-xl"></i>
+            </a>
+          </div>
+        </div>
       </div>
     {% endif %}
   {% endfor %}
