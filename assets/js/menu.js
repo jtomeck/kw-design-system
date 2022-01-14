@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('.burger-button').click(function(){
+  $('.burger-button, .nav-overlay').click(function(){
     if( $('.navmenu').hasClass('closed') ){
       $('.navmenu').stop().animate({left: '0'},200);
     } else {
