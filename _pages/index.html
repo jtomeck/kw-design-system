@@ -22,7 +22,7 @@ permalink: '/'
           <h3 class="mb-2 text-neutral-focus text-light card-title">{{ page.title }}</h3>
           <p class="mb-4 text-neutral">{{ page.excerpt }}</p>
           <div class="card-actions">
-            <a href="{{ site.baseurl }}{{ page.permalink }}" class="btn">
+            <a href="{{ page.url | relative_url }}" class="btn">
               Learn about {{ page.title }}
               <i class="ri-arrow-right-s-line text-base transition-all group-hover:text-xl"></i>
             </a>
