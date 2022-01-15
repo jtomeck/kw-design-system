@@ -32,19 +32,21 @@
     {% include sidebar.html %}
   </div>
   <div class="main-content">
-    {% if page.title != blank %}
+    <div class="page-hero">
+      <div class="content-wrap">
+        <h4 class="leading-5 text-secondary">{{ page.collection }}</h4>
+        <h1 class="title">{{ page.title }}</h1>
 
-      {% if page.url != "/" %}
-
-        <h1>{{ page.title }}</h1>
+        <h2 class="definition">{{ page.definition }}</h2>
+        <p class="excerpt">{{ page.excerpt }}</p>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="content-wrap">
         {{ content }}
+      </div>
+    </div>
 
-      {% else %}
-
-        {{ content }}
-
-      {% endif %}
-    {% endif %}
   </div>
 </main>
 
