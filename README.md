@@ -1,17 +1,15 @@
-# Kitware UI/UX Design System
 This design system is meant to define Kitware's way of thinking about UI/UX to help improve consistency and understanding between designers and developers.
 
-### License
-[MIT](https://github.com/jtomeck/kw-design-system/blob/master/LICENSE)
+License - [MIT](https://github.com/jtomeck/kw-design-system/blob/master/LICENSE)
 
-### Need help?
+## Need help?
 Have you found something wrong with the site? Have you run into a tricky UI/UX situation that you don't know how to handle?
 * Contact the design team at [uiux@kitware.com](mailto:uiux@kitware.com)
 * [Create an issue](https://github.com/jtomeck/kw-design-system/issues/new) with some constructive criticism
 
 If it's something that does not exist and warrants a place in the Design System, we'll be sure to add it!
 
-## For developers of this project
+# For developers of this project
 
 ### Requirements
 * [Bundler](http://bundler.io/)
@@ -28,7 +26,7 @@ If it's something that does not exist and warrants a place in the Design System,
 ### Build your site
 * `npm run build` to compile the site for production
 
-## Deploy
+### Deploy
 The design system is currently being deployed to [Netlify](https://www.netlify.com/). The included `netlify.toml` file will tell netlify to use `npm run build` to build the site.
 
 Here is a link to the site: https://kwuiux.netlify.app/
