@@ -7,7 +7,7 @@ module.exports = {
     './_layouts/*.html',
     './_posts/*.html',
     './_pages/*.html',
-    './assets/js/*.js'
+    './assets/js/**/*.js'
   ],
   theme: {
     fontFamily: {
