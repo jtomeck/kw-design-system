@@ -47,12 +47,21 @@
   */
 
   .burger {
-    @apply block;
-    height: 20px;
-    width: 20px;
+    @apply block h-[20px] w-[20px];
     span {
-      @apply bg-neutral block my-1 rounded-full w-full;
-      height: 2px;
+      @apply transition-all ease-in-out bg-neutral block h-[2px] my-1 rounded-full w-full;
+    }
+
+    &.open {
+      span:first-of-type {
+        @apply rotate-45 origin-top-left;
+      }
+      span:nth-of-type(2) {
+        @apply opacity-0;
+      }
+      span:last-of-type {
+        @apply -rotate-45 origin-bottom-left mt-[5px];
+      }
     }
   }
 
