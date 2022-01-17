@@ -78,13 +78,13 @@
   }
 
   .main-content {
-    @apply flex-1 flex-grow overflow-y-auto p-8 relative lg:px-24 lg:py-16 w-0;
+    @apply flex-1 flex-grow overflow-y-auto p-8 md:p-12 relative xl:px-24 xl:py-16 w-0;
     & > h1 {
       @apply mb-10;
     }
 
     .page-hero {
-      @apply bg-gradient-to-b from-neutral-focus to-neutral p-8 -m-8 text-white lg:-mx-24 lg:-my-16 lg:px-24 lg:py-16;
+      @apply bg-gradient-to-b from-neutral-focus to-neutral p-8 -m-8 md:p-12 md:-m-12 text-white xl:-mx-24 xl:-my-16 xl:px-24 xl:py-16;
 
       .definition {
         @apply border-b text-gray-400 border-gray-600 border-t my-8 pb-6 pt-4;
@@ -99,7 +99,7 @@
     }
   
     .content-wrap {
-      @apply lg:w-3/4 w-full;
+      @apply xl:w-3/4 w-full;
     }
 
     .cards-grid {
