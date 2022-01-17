@@ -73,10 +73,10 @@
     & > h1 {
       @apply mb-10;
     }
-  }
 
-  .cards-grid {
-    @apply grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6 pb-6;
+    .cards-grid {
+      @apply grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6 xl:auto-rows-fr;
+    }
   }
 
   /* Search Styles
