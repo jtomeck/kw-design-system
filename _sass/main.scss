@@ -84,6 +84,9 @@
   | javascript and adding classes to the html is difficult.
   */
   #results-container {
+    & > p {
+      @apply text-white m-0 py-6 px-10;
+    }
     .result {
       @apply border-b border-neutral-focus flex items-center p-3 pb-4;
       &:before {
