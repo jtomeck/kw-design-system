@@ -5,7 +5,7 @@ permalink: '/'
 ---
 
 <div class="cards-grid">
-  <div class="bg-neutral text-white xl:col-span-2 card sm:card-side rounded">
+  <div class="bg-neutral border-none text-white xl:col-span-2 card sm:card-side rounded">
     
     <figure class="p-8 sm:!w-1/3 md:!w-2/5">
       <img src="{{ site.baseurl }}assets/images/building-blocks.png" alt="" class="!w-full !h-auto !max-w-[240px]">
@@ -18,7 +18,7 @@ permalink: '/'
   </div>
   {% for page in site.pages %}
     {% if page.category == null and page.url != "/" and page.title != nil %}
-      <div class="border-t-4 border-secondary bg-white card rounded">
+      <div class="card">
         <div class="card-body">
           <h3 class="mb-2 text-neutral-focus text-light card-title">{{ page.title }}</h3>
           <p class="mb-0 flex-grow">{{ page.excerpt }}</p>
