@@ -112,7 +112,7 @@
   */
   .search {
     #search-input[type="search"] {
-      @apply !rounded-none;
+      @apply bg-white rounded-none appearance-none;
       -webkit-border-radius: 0;
       -webkit-appearance: none;
       &::-webkit-search-cancel-button{
