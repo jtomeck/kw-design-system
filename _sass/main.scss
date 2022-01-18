@@ -111,7 +111,6 @@
   | javascript and adding classes to the html is difficult.
   */
   .search {
-    @apply bg-white;
     #search-input[type="search"] {
       @apply !rounded-none;
       -webkit-border-radius: 0;
