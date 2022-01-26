@@ -25,7 +25,22 @@
     </div>
     <div class="page-content">
       <div class="content-wrap">
-        {{ content }}
+        {% for section in page.sections %}
+          <h2 class="mb-2">{{ section.heading }}</h2>
+          {% if section.list %}
+            {% include content_list.html %}
+          {% endif %}
+
+          {% if section.grid %}
+            {% include content_grid.html %}
+          {% endif %}
+
+          {% if section.standard %}
+            {{ section.standard }}
+          {% endif %}
+        {% else %}
+          {{ content }}
+        {% endfor %}
       </div>
     </div>
 

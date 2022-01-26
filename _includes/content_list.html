@@ -1,0 +1,13 @@
+<div class="gap-10 grid lg:grid-cols-2 py-8">
+    {% for item in section.list %}
+      <div>
+        <h3 class="flex items-center"><span class="mr-4 text-5xl text-secondary-300 w-6">{{ forloop.index }}.</span> {{ item.title }}</h3>
+        <div class="pl-10 pt-4">
+          {{ item.content }}
+          {% if item.image %}
+            <img src="{{ item.image }}" class="h-auto w-full mt-8">
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+</div>
