@@ -11,7 +11,21 @@
                 {% endif %}
             {% endfor %}
             {% for text in item.text %}
-                <p>{{ text }}</p>
+                {% if text.ul %}
+                    <ul class="list-disc mb-6 pl-8">
+                        {% for li in text.ul %}
+                            <li>{{ li }}</li>
+                        {% endfor %}
+                    </ul>
+                {% elsif text.ol %}
+                    <ol class="list-decimal mb-6 pl-8">
+                        {% for li in text.ol %}
+                            <li>{{ li }}</li>
+                        {% endfor %}
+                    </ol>
+                {% else %}
+                    <p>{{ text }}</p>
+                {% endif %}
             {% endfor %}
         </div>
       </div>
