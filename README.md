@@ -73,6 +73,7 @@ sections:
 This will get you something that looks like this:
 <img width="1018" alt="Screen Shot 2022-02-02 at 4 03 03 PM" src="https://user-images.githubusercontent.com/1560779/152238450-a4c3cbfe-e5b6-490e-97e5-2dc8dd0d3aa0.png">
 
+---
 
 ### List
 Use this section type for complex lists. This will show up in a grid and give you the ability to add a subheading, text and image.
@@ -100,6 +101,7 @@ sections:
 This will get you something that looks like this:
 <img width="1012" alt="Screen Shot 2022-02-02 at 4 07 41 PM" src="https://user-images.githubusercontent.com/1560779/152238387-f1d16c26-f855-463a-952c-ef31a9081d46.png">
 
+---
 
 ### Grid
 This is basically the same as the list section, without the numbering.
@@ -127,6 +129,7 @@ sections:
 This will get you something that looks like this:
 <img width="995" alt="Screen Shot 2022-02-02 at 4 10 17 PM" src="https://user-images.githubusercontent.com/1560779/152238356-f9d73279-5f62-4094-ae5c-0378c7c6ec8c.png">
 
+---
 
 ## Frameworks & Integrations
 This site uses the following frameworks/integrations:
