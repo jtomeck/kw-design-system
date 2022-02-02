@@ -31,16 +31,16 @@ The design system is currently being deployed to [Netlify](https://www.netlify.c
 
 Here is a link to the site: https://kwuiux.netlify.app/
 
-### Adding content to collection pages
+# Adding content to collection pages
 To edit the content of the collection pages, you must add it to the frontmatter. Content editing is meant to be very strict and lock you into certain content structures. You might feel that this is unnecessarily complex, but there are some very good reasons for this complexity:
 
 1. Adding complex layouts and HTML structures to markdown pages is a pain
 2. It's easier to write out the content in the frontmatter rather than write custom HTML for each page.
 3. Limiting the amount of custom HTML and styling a user can do to the content ensures consistency across the site
 
-#### Content types and how to use them
+## Content types and how to use them
 
-##### Standard
+### Standard
 Use this section type for just normal blocks of text, such as paragraph, unordered lists and numbered lists. You may also use images.
 
 Here is an example of the frontmatter for the standard content section:
@@ -68,9 +68,13 @@ sections:
             - url: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
               align: right
 ```
-**Please Note** that you are only allowed one subheading and one image per content block. If you want additional, just start a new content blcok.
+***Please Note** that you are only allowed one subheading and one image per content block. If you want additional, just start a new content block.
 
-##### List
+This will get you something that looks like this:
+<img width="1018" alt="Screen Shot 2022-02-02 at 4 03 03 PM" src="https://user-images.githubusercontent.com/1560779/152238450-a4c3cbfe-e5b6-490e-97e5-2dc8dd0d3aa0.png">
+
+
+### List
 Use this section type for complex lists. This will show up in a grid and give you the ability to add a subheading, text and image.
 
 The frontmatter for a list section might look like this:
@@ -93,8 +97,11 @@ sections:
           text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et enim id tellus lacinia convallis dictum sit amet arcu. In quis bibendum urna.
           image: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
 ```
+This will get you something that looks like this:
+<img width="1012" alt="Screen Shot 2022-02-02 at 4 07 41 PM" src="https://user-images.githubusercontent.com/1560779/152238387-f1d16c26-f855-463a-952c-ef31a9081d46.png">
 
-##### Grid
+
+### Grid
 This is basically the same as the list section, without the numbering.
 
 The frontmatter for a grid section might look like this:
@@ -117,6 +124,9 @@ sections:
           text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et enim id tellus lacinia convallis dictum sit amet arcu. In quis bibendum urna.
           image: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
 ```
+This will get you something that looks like this:
+<img width="995" alt="Screen Shot 2022-02-02 at 4 10 17 PM" src="https://user-images.githubusercontent.com/1560779/152238356-f9d73279-5f62-4094-ae5c-0378c7c6ec8c.png">
+
 
 ## Frameworks & Integrations
 This site uses the following frameworks/integrations:
