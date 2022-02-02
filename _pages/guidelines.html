@@ -1,25 +1,8 @@
 ---
 title: Guidelines
-layout: default
+layout: page
 permalink: /guidelines/
 
 # Content for Dashboard
 excerpt: "In this section you will find a list of common UI/UX patterns, as well as how you should approach different scenarios when these patterns must be used."
 ---
-
-<div class="cards-grid">
-  {% for guideline in site.guidelines %}
-    <div class="card">
-      <div class="card-body">
-        <h3 class="mb-2 text-neutral-focus card-title">{{ guideline.title }}</h3>
-        <p class="mb-0 flex-grow">{{ guideline.excerpt }}</p>
-        <div class="card-actions">
-          <a href="{{ guideline.url | relative_url }}" class="btn">
-            Learn more
-            <i class="ri-arrow-right-s-line text-base ml-4"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>

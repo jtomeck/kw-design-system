@@ -1,25 +1,8 @@
 ---
 title: Components
-layout: default
+layout: page
 permalink: /components/
 
 # Content for Dashboard
 excerpt: "This section is not meant to be a list of plug and play components, because components and how to build them will vary from framework to framework. It will give you use cases and best practices for each."
 ---
-
-<div class="cards-grid">
-  {% for component in site.components %}
-    <div class="card">
-      <div class="card-body">
-        <h3 class="card-title text-neutral-focus mb-2">{{ component.title }}</h3>
-        <p class="mb-0 flex-grow">{{ component.excerpt }}</p>
-        <div class="card-actions">
-          <a href="{{ component.url | relative_url }}" class="btn">
-            Learn more
-            <i class="ri-arrow-right-s-line text-base ml-4"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  {% endfor %}
-</div>
