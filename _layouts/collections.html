@@ -27,16 +27,16 @@
       <div class="content-wrap">
         {% for section in page.sections %}
           <h2 class="mb-2">{{ section.heading }}</h2>
-          {% if section.list %}
+          {% if section.type == 'list' %}
             {% include content_list.html %}
           {% endif %}
 
-          {% if section.grid %}
+          {% if section.type == 'grid' %}
             {% include content_grid.html %}
           {% endif %}
 
-          {% if section.standard %}
-            {{ section.standard }}
+          {% if section.type == 'standard' %}
+            {% include content_standard.html %}
           {% endif %}
         {% else %}
           {{ content }}
