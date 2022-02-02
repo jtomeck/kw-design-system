@@ -1,0 +1,19 @@
+<div class="py-8">
+    {% for item in section.content %}
+      <div>
+        <h3>{{ item.subheading }}</h3>
+        <div class="pt-4">
+            {% for image in item.image %}
+                {% if image.align == 'left' %}
+                    <img src="{{ image.url }}" align="left" class="md:mr-6 mb-6 md:max-w-[360px]" />
+                {% elsif image.align == 'right' %}
+                    <img src="{{ image.url }}" align="right" class="md:ml-6 mb-6 md:max-w-[360px]" />
+                {% endif %}
+            {% endfor %}
+            {% for text in item.text %}
+                <p>{{ text }}</p>
+            {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+</div>
