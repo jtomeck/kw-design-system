@@ -19,6 +19,7 @@ If it's something that does not exist and warrants a place in the Design System,
 * [Ruby](https://www.ruby-lang.org/en/)
 
 ### Get started
+* Clone this repository and `cd` into the directory
 * `bundle install` to install Ruby gems
 * `npm ci` to clean install npm packages listed in `package-lock.json`
 * `npm run dev` to compile the site and watch for changes
