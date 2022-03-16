@@ -8,25 +8,28 @@
 
 <!-- Content Area -->
 <main class="site-body">
-  <div class="nav-overlay bg-neutral-focus fixed opacity-[.8] hidden inset-0 z-[80]"></div>
-  <div id="menu" class="navmenu closed bottom-0 fixed lg:static top-20 w-64 z-[100]">
-    {% include sidebar.html %}
-  </div>
-  <div class="main-content">
-    <div class="search-overlay bg-neutral-focus fixed opacity-[.8] hidden inset-0 z-[60]"></div>
-    {% if page.title != blank %}
+  <div class="drawer drawer-mobile h-[calc(100vh-146px)] sm:h-[calc(100vh-80px)] w-full">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle">
+    <div class="main-content drawer-content">
+      <div class="search-overlay bg-neutral-focus fixed opacity-[.8] hidden inset-0 z-[60]"></div>
+      {% if page.title != blank %}
 
-      {% if page.url != "/" %}
+        {% if page.url != "/" %}
 
-        <h1>{{ page.title }}</h1>
-        {{ content }}
+          <h1>{{ page.title }}</h1>
+          {{ content }}
 
-      {% else %}
+        {% else %}
 
-        {{ content }}
+          {{ content }}
 
+        {% endif %}
       {% endif %}
-    {% endif %}
+    </div>
+    <div id="menu" class="drawer-side min-w-[280px]">
+      <label for="my-drawer" class="drawer-overlay"></label>
+      {% include sidebar.html %}
+    </div>
   </div>
 </main>
 

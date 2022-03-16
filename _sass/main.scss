@@ -41,33 +41,6 @@
     @apply mb-4;
   }
 
-  /* Nav Styles
-    | Styles for navigation responsiveness
-  */
-
-  .burger {
-    @apply block h-[20px] w-[20px];
-    span {
-      @apply transition-all ease-in-out bg-neutral block h-[2px] my-1 rounded-full w-full;
-    }
-
-    &.open {
-      span:first-of-type {
-        @apply rotate-45 origin-top-left;
-      }
-      span:nth-of-type(2) {
-        @apply opacity-0;
-      }
-      span:last-of-type {
-        @apply -rotate-45 origin-bottom-left mt-[5px];
-      }
-    }
-  }
-
-  .closed {
-    @apply -left-64 lg:left-auto;
-  }
-
   /* Main Site Styles */
 
   .site-body {
@@ -77,7 +50,7 @@
   }
 
   .main-content {
-    @apply flex-1 flex-grow overflow-y-auto p-8 md:p-12 relative xl:px-24 xl:py-16 w-0;
+    @apply overflow-y-auto p-8 md:p-12 relative xl:px-24 xl:py-16;
     & > h1 {
       @apply mb-10;
     }

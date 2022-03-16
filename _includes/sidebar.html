@@ -29,20 +29,20 @@
 
                         <!-- Dropdown -->
                         {% if csize > 0 %}
-                            {% if collection.title == page.title or collection.label == page.collection %}
-                                <ul class="menu my-2 space-y-1 !pl-0">
-                                    {% for item in collection.docs %}
-                                    <li>
-                                        <a href="{{ item.url }}" class="{% if page.url == item.url or page.collection == page.title %}active{% endif %} !py-2 !pl-8">
-                                            <span class="flex items-center">
-                                                <i class="ri-arrow-drop-right-line"></i>
+                            <ul class="!block !static menu my-2 space-y-1 !pl-0">
+                                {% for item in collection.docs %}
+                                <li>
+                                    <a href="{{ item.url }}" class="{% if page.url == item.url or page.collection == page.title %}active{% endif %} !py-2 !pl-8">
+                                        <span class="flex items-center">
+                                            <i class="ri-arrow-drop-right-line w-[24px]"></i>
+                                            <span class="flex-grow">
                                                 {{ item.title }}
                                             </span>
-                                        </a>
-                                    </li>
-                                    {% endfor %}
-                                </ul>
-                            {% endif %}
+                                        </span>
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
                         {% endif %}
                     </li>
                 {% endif %}
