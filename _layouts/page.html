@@ -8,44 +8,45 @@
 
 <!-- Content Area -->
 <main class="site-body">
-  <div class="nav-overlay bg-neutral-focus fixed opacity-[.9] hidden inset-0 z-[80]"></div>
-  <div id="menu" class="navmenu closed bottom-0 fixed lg:static top-20 w-64 z-[90]">
-    {% include sidebar.html %}
-  </div>
-  <div class="main-content">
-    <div class="search-overlay bg-neutral-focus fixed opacity-[.9] hidden inset-0 z-[60]"></div>
-    <div class="page-hero">
-      <div class="content-wrap">
-        <h4 class="leading-5 text-secondary">{{ page.collection }}</h4>
-        <h1 class="title">{{ page.title }}</h1>
-
-        <p class="excerpt mt-6 pt-6 border-t border-gray-600">{{ page.excerpt }}</p>
+  <div class="drawer drawer-mobile h-[calc(100vh-146px)] sm:h-[calc(100vh-80px)] w-full">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle"> 
+    <div class="main-content drawer-content">
+      <div class="search-overlay bg-neutral-focus fixed opacity-[.9] hidden inset-0 z-[60]"></div>
+      <div class="page-hero">
+        <div class="content-wrap">
+          <h4 class="leading-5 text-secondary">{{ page.collection }}</h4>
+          <h1 class="title">{{ page.title }}</h1>
+          <p class="excerpt mt-6 pt-6 border-t border-gray-600">{{ page.excerpt }}</p>
+        </div>
+      </div>
+      <div class="page-content">
+          {% assign collection_name = page.title | downcase %}
+          {% if site[collection_name] %}
+              <div class="cards-grid">
+                  {% for item in site[collection_name] %}
+                  <div class="card">
+                      <div class="card-body">
+                      <h3 class="mb-2 text-neutral-focus card-title">{{ item.title }}</h3>
+                      <p class="mb-0 flex-grow">{{ item.excerpt }}</p>
+                      <div class="card-actions">
+                          <a href="{{ item.url | relative_url }}" class="btn">
+                          Learn more
+                          <i class="ri-arrow-right-s-line text-base ml-4"></i>
+                          </a>
+                      </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+          {% else %}
+              {{ content }}
+          {% endif %}
       </div>
     </div>
-    <div class="page-content">
-        {% assign collection_name = page.title | downcase %}
-        {% if site[collection_name] %}
-            <div class="cards-grid">
-                {% for item in site[collection_name] %}
-                <div class="card">
-                    <div class="card-body">
-                    <h3 class="mb-2 text-neutral-focus card-title">{{ item.title }}</h3>
-                    <p class="mb-0 flex-grow">{{ item.excerpt }}</p>
-                    <div class="card-actions">
-                        <a href="{{ item.url | relative_url }}" class="btn">
-                        Learn more
-                        <i class="ri-arrow-right-s-line text-base ml-4"></i>
-                        </a>
-                    </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        {% else %}
-            {{ content }}
-        {% endif %}
+    <div class="drawer-side min-w-[280px]">
+      <label for="my-drawer" class="drawer-overlay"></label>
+      {% include sidebar.html %}
     </div>
-
   </div>
 </main>
 
