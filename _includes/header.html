@@ -1,13 +1,16 @@
 <header class="flex flex-wrap items-center w-full">
-    <div class="bg-white w-full z-[100] lg:w-64">
-        <div class="border-b-2 border-base-200 flex h-20 items-center lg:px-4">
-            <div class="burger-button cursor-pointer flex h-20 lg:hidden items-center justify-center mr-5 opacity-75 w-20">
-                <div class="burger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+    <div class="bg-white w-full lg:w-[280px] z-[100]">
+        <div class="border-b-2 border-gray-200 flex h-20 items-center sm:px-4">
+            <label
+                x-data="{ clicked: false}"
+                x-on:click="clicked = ! clicked"
+                for="my-drawer"
+                class="sm:hidden drawer-button btn btn-ghost btn-circle mx-2 swap swap-rotate"
+                :class="{ 'swap-active' : clicked }"
+            >
+                <i class="ri-menu-line swap-off text-lg"></i>
+                <i class="ri-close-line swap-on text-xl"></i>
+            </label>
             <h1 class="flex flex-wrap items-center pb-1">
                 <span class="font-extrabold mr-2 text-primary text-6xl">KW</span>
                 <span class="font-serif text-base">UI/UX <span class="block leading-4">Design System</span></span>
