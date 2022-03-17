@@ -8,29 +8,23 @@
 
 <!-- Content Area -->
 <main class="site-body">
-  <div class="drawer drawer-mobile h-[calc(100vh-146px)] sm:h-[calc(100vh-80px)] w-full">
-    <input id="my-drawer" type="checkbox" class="drawer-toggle">
-    <div class="main-content drawer-content">
-      <div class="search-overlay bg-neutral-focus fixed opacity-[.8] hidden inset-0 z-[60]"></div>
-      {% if page.title != blank %}
+  {% include drawer_start.html %}
 
-        {% if page.url != "/" %}
+  {% if page.title != blank %}
 
-          <h1>{{ page.title }}</h1>
-          {{ content }}
+    {% if page.url != "/" %}
 
-        {% else %}
+      <h1>{{ page.title }}</h1>
+      {{ content }}
 
-          {{ content }}
+    {% else %}
 
-        {% endif %}
-      {% endif %}
-    </div>
-    <div id="menu" class="drawer-side min-w-[280px]">
-      <label for="my-drawer" class="drawer-overlay"></label>
-      {% include sidebar.html %}
-    </div>
-  </div>
+      {{ content }}
+
+    {% endif %}
+  {% endif %}
+      
+  {% include drawer_end.html %}
 </main>
 
 {% include footer.html %}

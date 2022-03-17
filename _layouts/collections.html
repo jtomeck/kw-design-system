@@ -8,45 +8,40 @@
 
 <!-- Content Area -->
 <main class="site-body">
-  <div class="drawer drawer-mobile h-[calc(100vh-146px)] sm:h-[calc(100vh-80px)] w-full">
-    <input id="my-drawer" type="checkbox" class="drawer-toggle"> 
-    <div class="main-content drawer-content">
-      <div class="search-overlay bg-neutral-focus fixed opacity-[.9] hidden inset-0 z-[60]"></div>
-      <div class="page-hero">
-        <div class="content-wrap">
-          <h4 class="leading-5 text-secondary">{{ page.collection }}</h4>
-          <h1 class="title">{{ page.title }}</h1>
+  {% include drawer_start.html %}
 
-          <h2 class="definition">{{ page.definition }}</h2>
-          <p class="excerpt">{{ page.excerpt }}</p>
-        </div>
-      </div>
-      <div class="page-content">
-        <div class="content-wrap">
-          {% for section in page.sections %}
-            <h2 class="mb-2">{{ section.heading }}</h2>
-            {% if section.type == 'list' %}
-              {% include content_list.html %}
-            {% endif %}
+  <div class="page-hero">
+    <div class="content-wrap">
+      <h4 class="leading-5 text-secondary">{{ page.collection }}</h4>
+      <h1 class="title">{{ page.title }}</h1>
 
-            {% if section.type == 'grid' %}
-              {% include content_grid.html %}
-            {% endif %}
-
-            {% if section.type == 'standard' %}
-              {% include content_standard.html %}
-            {% endif %}
-          {% else %}
-            {{ content }}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-    <div class="drawer-side min-w-[280px]">
-      <label for="my-drawer" class="drawer-overlay"></label>
-      {% include sidebar.html %}
+      <h2 class="definition">{{ page.definition }}</h2>
+      <p class="excerpt">{{ page.excerpt }}</p>
     </div>
   </div>
+
+  <div class="page-content">
+    <div class="content-wrap">
+      {% for section in page.sections %}
+        <h2 class="mb-2">{{ section.heading }}</h2>
+        {% if section.type == 'list' %}
+          {% include content_list.html %}
+        {% endif %}
+
+        {% if section.type == 'grid' %}
+          {% include content_grid.html %}
+        {% endif %}
+
+        {% if section.type == 'standard' %}
+          {% include content_standard.html %}
+        {% endif %}
+      {% else %}
+        {{ content }}
+      {% endfor %}
+    </div>
+  </div>
+
+  {% include drawer_end.html %}
 </main>
 
 {% include footer.html %}
