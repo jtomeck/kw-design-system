@@ -3,9 +3,30 @@ title: Loading States
 layout: collections
 
 # Page Hero
-definition: Definition for loading states
-excerpt: This is the content for the loading states page.
+definition: Visual indicators that let the user know there is something happening in the background and that they should wait a moment for it to finish.
+excerpt: Loading states are very important because they let a user know that nothing is wrong and that something is happening. Imagine uploading an image/file or accessing a very data heavy page with no visual feedback that anything is happening. That visual feedback will keep users from becoming confused and may even keep them from leaving.
 
 # Page Content
+sections:
+    - type: list
+      heading: Types of loading states
+      content:
+        - subheading: Progress Bars
+          text: If the user takes an action where progress can be tracked, the obvious choice is to use a progress bar. File uploads are a good example of when to use progress bars. We already know the file size and can easily show the user how much of the total size has been uploaded. When using progress bars, try not to just show the bar itself. Pair it with text, such as a label describing what the progress bar is for, as well as a numerical representation of the progress (whether it be in units such as bytes/kilobytes/etc or percentages).
+          image: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
+        - subheading: Spinners
+          text: If the user takes an action where progress can’t be tracked, spinners can be used. That small amount of visual feedback is often enough to keep users engaged and aware of what is happening. You should often add text to go along with your spinners to prompt the user to wait a moment or tell them what to do if the action is taking too long.
+          image: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
+        - subheading: Skeleton/Ghost States
+          text: Skeleton or ghost states are typically used when a page is in the process of loading. They provide a “wireframe” view of what the user will see once the page is fully loaded. This is particularly good in the case that elements of the page load in at different times. The skeleton loader will keep the page from jumping around as it loads. It is a good idea to use skeleton states even if the page does not take a long time to load. This will greatly benefit your users who are on slower connections.
+          image: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
+    - type: standard
+      heading: Things to consider when implementing loading states
+      content:
+        - text:
+            - ol:
+                - When using spinners, showing some sort of visual when it completes is better than the spinner just disappearing. This gives you the opportunity to say whether the action succeeded or failed. For example, if a user clicks a switch to enable a setting, you can show a spinner next to the switch that turns into a green check icon before disappearing.
+                - You should always give your users an “out” if an action is taking too long. No matter what type of loading state you’re using, this is a best practice that should not be overlooked. If the user’s action is taking a while, provide them a cancel button or any specific instructions that might be necessary depending on your use case. At the very least they should be notified that the action may take an extended amount of time to mitigate their impatience. In the event that a user’s action fails, provide them with the ability to retry the action.
+
 
 ---
