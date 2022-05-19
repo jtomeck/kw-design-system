@@ -57,6 +57,9 @@ module.exports = {
           'warning-content': '#DBC063',
           'error': '#FFD1D4',
           'error-content': '#D8525B',
+
+          "--rounded-box": "0", // border radius rounded-box utility class, used in card and other large boxes
+          "--rounded-btn": "0", // border radius rounded-btn utility class, used in buttons and similar element
         },
       },
     ],
