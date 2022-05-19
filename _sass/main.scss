@@ -79,7 +79,7 @@
     .cards-grid {
       @apply grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6 xl:auto-rows-fr;
       .card {
-        @apply bg-white border-t-4 border-secondary rounded;
+        @apply bg-white border-t-[6px] border-secondary;
       }
     }
   }
