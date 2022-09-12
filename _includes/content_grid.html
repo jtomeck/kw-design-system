@@ -4,7 +4,23 @@
       <div>
         <h3>{{ item.subheading }}</h3>
         <div class="pt-4">
-          {{ item.text }}
+          {% for text in item.text %}
+            {% if text.ul %}
+              <ul class="list-disc mb-6 pl-8">
+                {% for li in text.ul %}
+                  <li>{{ li }}</li>
+                {% endfor %}
+              </ul>
+            {% elsif text.ol %}
+              <ol class="list-decimal mb-6 pl-8">
+                {% for li in text.ol %}
+                  <li>{{ li }}</li>
+                {% endfor %}
+              </ol>
+            {% else %}
+              <p>{{ text }}</p>
+            {% endif %}
+          {% endfor %}
           {% if item.image %}
             <img src="{{ item.image }}" class="h-auto w-full mt-8">
           {% endif %}
@@ -14,7 +30,23 @@
       <div class="cta bg-neutral border-l-[6px] border-secondary text-gray-400">
         <div class="px-8 py-5 pb-7">
           <h3 class="text-white mb-4">{{ item.subheading }}</h3>
-          {{ item.text }}
+          {% for text in item.text %}
+            {% if text.ul %}
+              <ul class="list-disc mb-6 pl-8">
+                {% for li in text.ul %}
+                  <li>{{ li }}</li>
+                {% endfor %}
+              </ul>
+            {% elsif text.ol %}
+              <ol class="list-decimal mb-6 pl-8">
+                {% for li in text.ol %}
+                  <li>{{ li }}</li>
+                {% endfor %}
+              </ol>
+            {% else %}
+              <p>{{ text }}</p>
+            {% endif %}
+          {% endfor %}
           {% if item.image %}
             <img src="{{ item.image }}" class="h-auto w-full mt-8">
           {% endif %}
