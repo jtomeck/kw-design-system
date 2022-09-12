@@ -77,7 +77,7 @@
     }
   
     .content-wrap {
-      @apply xl:w-3/4 w-full;
+      @apply xl:max-w-[1280px] w-full;
     }
 
     .cards-grid {
