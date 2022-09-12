@@ -87,6 +87,18 @@
         @apply bg-white border-t-4 border-secondary drop-shadow-sm;
       }
     }
+
+    .cta {
+      ul,
+      ol {
+        li {
+          @apply mb-4;
+          strong {
+            @apply text-white font-semibold;
+          }
+        }
+      }
+    }
   }
 
   /* Search Styles
