@@ -15,23 +15,27 @@ permalink: '/'
         <h2 class="mb-0 card-title text-white">The {{ site.title }}</h2>
         <h6 class="mb-4 text-gray-400">{{ site.description }}</h6>
       </div>
-      <p>Kitware's applications are more than just a composition of reusable UI components. There should be structure and meaningful interactions. This design system will help both designers and developers keep consistent across the board by defining Kitware's way of thinking about UI/UX.</p>
+      <p class="flex-grow-0">Kitware's applications are more than just a composition of reusable UI components. There should be structure and meaningful interactions. The purpose of this design system is to help Kitware's designers and developers quickly identify UI/UX problems and provide solutions.</p>
     </div>
   </div>
   {% for page in site.pages %}
     {% if page.category == null and page.url != "/" and page.title != nil %}
       <div class="card">
         <div class="card-body">
-          <h3 class="mb-2 text-neutral-focus text-light card-title">{{ page.title }}</h3>
-          <p class="mb-0 flex-grow">{{ page.excerpt }}</p>
-          <div class="card-actions">
-            <a href="{{ page.url | relative_url }}" class="btn">
+          <h3 class="text-neutral-focus text-light card-title">{{ page.title }}</h3>
+          <p class="flex-grow">{{ page.excerpt }}</p>
+          <div class="card-actions mt-4">
+            <a href="{{ page.url | relative_url }}" class="btn gap-2">
               Learn more
-              <i class="ri-arrow-right-s-line text-base ml-4"></i>
+              <i class="ri-arrow-right-s-line text-base"></i>
             </a>
           </div>
         </div>
       </div>
     {% endif %}
   {% endfor %}
+  
+  <div class="xl:col-span-2">
+    {% include contact_cta.html %}
+  </div>
 </div>

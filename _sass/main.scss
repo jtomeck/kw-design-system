@@ -30,15 +30,19 @@
   }
 
   h5 {
-    @apply font-normal text-xl;
+    @apply font-normal text-lg;
   }
 
   h6 {
-    @apply font-normal text-lg;
+    @apply font-semibold text-base;
   }
 
   p {
     @apply mb-4;
+  }
+
+  strong {
+    @apply font-semibold inline;
   }
 
   /* Main Site Styles */
@@ -78,8 +82,9 @@
 
     .cards-grid {
       @apply grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6 xl:auto-rows-fr;
-      .card {
-        @apply bg-white border-t-[6px] border-secondary;
+      > .card,
+      > div > .card {
+        @apply bg-white border-t-4 border-secondary drop-shadow-sm;
       }
     }
   }
