@@ -1,5 +1,6 @@
 <div class="gap-10 grid lg:grid-cols-2 py-8">
     {% for item in section.content %}
+      {% if item.type != "cta" %}
       <div>
         <h3>{{ item.subheading }}</h3>
         <div class="pt-4">
@@ -9,5 +10,16 @@
           {% endif %}
         </div>
       </div>
+      {% else %}
+      <div class="cta bg-neutral border-l-[6px] border-secondary text-gray-400">
+        <div class="px-8 py-5 pb-7">
+          <h3 class="text-white mb-4">{{ item.subheading }}</h3>
+          {{ item.text }}
+          {% if item.image %}
+            <img src="{{ item.image }}" class="h-auto w-full mt-8">
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
     {% endfor %}
 </div>

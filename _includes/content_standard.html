@@ -8,6 +8,8 @@
                     <img src="{{ image.url }}" align="left" class="md:mr-6 mb-6 md:max-w-[360px]" />
                 {% elsif image.align == 'right' %}
                     <img src="{{ image.url }}" align="right" class="md:ml-6 mb-6 md:max-w-[360px]" />
+                {% elsif image.align == null or image.full == true %}
+                    <img src="{{ image.url }}" class="mb-8 md:w-full" />
                 {% endif %}
             {% endfor %}
             {% for text in item.text %}
