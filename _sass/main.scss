@@ -92,7 +92,7 @@
     }
   
     .content-wrap {
-      @apply xl:w-3/4 w-full;
+      @apply xl:max-w-[1280px] w-full;
     }
 
     .cards-grid {
@@ -100,6 +100,18 @@
       > .card,
       > div > .card {
         @apply bg-white border-t-4 border-secondary drop-shadow-sm;
+      }
+    }
+
+    .cta {
+      ul,
+      ol {
+        li {
+          @apply mb-4;
+          strong {
+            @apply text-white font-semibold;
+          }
+        }
       }
     }
   }

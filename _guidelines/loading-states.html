@@ -21,15 +21,16 @@ sections:
           image: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
         - subheading: Skeleton/Ghost States
           text:
-          - Skeleton or ghost states are typically used when a page is in the process of loading. They provide a “wireframe” view of what the user will see once the page is fully loaded. This is particularly good in the case that elements of the page load in at different times. The skeleton loader will keep the page from jumping around as it loads. It is a good idea to use skeleton states even if the page does not take a long time to load. This will greatly benefit your users who are on slower connections.
+            - Skeleton or ghost states are typically used when a page is in the process of loading. They provide a “wireframe” view of what the user will see once the page is fully loaded. This is particularly good in the case that elements of the page load in at different times. The skeleton loader will keep the page from jumping around as it loads. It is a good idea to use skeleton states even if the page does not take a long time to load. This will greatly benefit your users who are on slower connections.
           image: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
-    - type: standard
-      heading: Things to consider when implementing loading states
-      content:
-        - text:
-            - ol:
-                - When using spinners, showing some sort of visual when it completes is better than the spinner just disappearing. This gives you the opportunity to say whether the action succeeded or failed. For example, if a user clicks a switch to enable a setting, you can show a spinner next to the switch that turns into a green check icon before disappearing.
-                - You should always give your users an “out” if an action is taking too long. No matter what type of loading state you’re using, this is a best practice that should not be overlooked. If the user’s action is taking a while, provide them a cancel button or any specific instructions that might be necessary depending on your use case. At the very least they should be notified that the action may take an extended amount of time to mitigate their impatience. In the event that a user’s action fails, provide them with the ability to retry the action.
+        - type: cta
+          subheading: Things to consider...
+          text:
+            - ul:
+              - <strong>Indicate completion</strong> of a loading event. For example, if a user makes an action that takes a moment, you could show a spinner and instead of just disappearing on completion, it could turn into a green check mark for one to three seconds before doing so.
+              - <strong>Notify users about load times</strong> for loading events will take a while, but it is not possible to give a time estimate. Even just saying "this may take a while" is better than letting the user wonder if the action they attempted has failed.
+              - <strong>Give users an "out"</strong> if a loading event will take a long time. This is a best practice that should not be overlooked, regardless of the type of loading state being utilized. Providing the user with a cancel button or any specific instructions that may be necessary (depending on your use case) is a very good idea.
+              - <strong>Allow users to try again</strong> if an attempted action fails or if the action can yeild different results with different parameters.
 
 
 ---
