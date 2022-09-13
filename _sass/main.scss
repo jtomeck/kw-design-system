@@ -7,6 +7,21 @@
 
   body {
     @apply h-screen overflow-hidden;
+
+    /* Show the whitespace page without any whitespace to illustrate the point of whitespace. */
+    &.no-whitespace {
+      & * {
+        @apply m-0 p-0 gap-0 leading-none !important;
+      }
+    }
+
+    /* Styles for the whitespace call to action to toggle whitespace */
+    .no-whitespace-cta {
+      @apply bg-gray-600 border border-gray-500 text-white p-4 md:flex items-center justify-center;
+      .btn {
+        @apply my-2 md:my-0 md:ml-4;
+      }
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
