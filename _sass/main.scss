@@ -7,6 +7,11 @@
 
   body {
     @apply h-screen overflow-hidden;
+    &.no-whitespace {
+      & * {
+        @apply m-0 p-0 gap-0 !important;
+      }
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {
