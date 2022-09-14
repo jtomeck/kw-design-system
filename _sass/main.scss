@@ -4,6 +4,9 @@
 
 /* All Custom CSS here */
 @layer base {
+  a {
+    @apply decoration-1 underline-offset-4;
+  }
 
   body {
     @apply h-screen overflow-hidden;
