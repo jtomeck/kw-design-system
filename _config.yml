@@ -26,9 +26,9 @@ collections:
     permalink: /:collection/:name
     title: Guidelines
 
-  components:
-    archive_url: /components/
-    icon: ri-dashboard-line
+  case-studies:
+    archive_url: /case-studies/
+    icon: ri-quill-pen-line
     output: true
     permalink: /:collection/:name
-    title: Components
+    title: Case Studies
