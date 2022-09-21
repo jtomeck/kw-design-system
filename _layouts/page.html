@@ -38,7 +38,9 @@
         {% endfor %}
       </div>
     {% else %}
-      {{ content }}
+      <div class="text-center p-24 text-2xl font-thin text-gray-400">
+        No {{ collection_name }} have been added yet. Please check back later!
+      </div>
     {% endif %}
   </div>
 
