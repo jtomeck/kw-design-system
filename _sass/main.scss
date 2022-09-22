@@ -105,7 +105,7 @@
           }
         }
         &.project-screens {
-          @apply bg-gradient-to-tl from-slate-300 to-slate-200 p-8 -mx-8 md:p-12 md:-mx-12 xl:-mx-24 xl:px-24 xl:py-16;
+          @apply bg-gradient-to-tl from-slate-300 to-slate-200 p-4 -mx-8 sm:p-8 md:p-12 md:-mx-12 xl:-mx-24 xl:px-24 xl:py-16;
           .laptop-overlay {
             @apply pointer-events-none relative z-20;
           }
