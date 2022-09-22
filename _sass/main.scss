@@ -109,15 +109,6 @@
           .laptop-overlay {
             @apply pointer-events-none relative z-20;
           }
-          .screenshots {
-            @apply absolute bottom-[20.4%] top-[4.5%] inset-x-[11.4%] bg-blue-500 z-10 overflow-hidden;
-            .screenshot {
-              @apply block w-full;
-              img {
-                @apply w-full;
-              }
-            }
-          }
         }
       }
     }
