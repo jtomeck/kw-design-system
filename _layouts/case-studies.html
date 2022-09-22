@@ -88,24 +88,22 @@ to write a ton of new page structure.
                 <div class="laptop-overlay">
                     <img src="{{ site.baseurl }}assets/images/laptop.svg" class="w-full h-auto">
                 </div>
-                <div class="screenshots">
-                    <div class="carousel h-full">
-                        {% assign i = 0 %}
-                        {% for screen in page.screenshots %}
+                <div class="carousel absolute bottom-[20%] top-[3.8%] inset-x-[11%]">
+                    {% assign i = 0 %}
+                    {% for image in page.screenshots %}
                         {% assign i = i | plus:1 %}
-                            <div id="slide{{ i }}" class="screenshot carousel-item overflow-y-auto relative h-full w-full">
-                                <img src="{{ screen }}">
-                            </div>
-                        {% endfor %}
-                    </div>
+                        <div id="item{{ i }}" class="carousel-item block h-full overflow-y-auto w-full">
+                            <img src="{{ site.baseurl | append: image }}" class="w-full" />
+                        </div>
+                    {% endfor %}
                 </div>
-                <div class="flex justify-center w-full py-2 gap-2">
+                <div class="flex justify-center w-full py-2 pt-8 gap-2">
                     {% assign n = 0 %}
-                    {% for screen in page.screenshots %}
+                    {% for image in page.screenshots %}
                         {% assign n = n | plus:1 %}
                         <a href="#item{{ n }}" class="btn btn-xs">{{ n }}</a>
                     {% endfor %}
-                  </div>
+                </div>
             </div>
         </div>
     </div>
