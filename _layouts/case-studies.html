@@ -30,6 +30,7 @@ to write a ton of new page structure.
             </div>
         </div>
 
+        <!-- Project Details -->
         <div class="project-details page-content">
             <div class="content-wrap">
                 <!-- Project Overview -->
@@ -37,6 +38,8 @@ to write a ton of new page structure.
                     <h2>Overview</h2>
                     <p>{{ page.overview }}</p>
                 </div>
+
+                <!-- Project Info-->
                 <div class="project-info pt-12 grid grid-cols-12">
                     <div class="secondary-info col-span-3">
                         <div class="process card">
@@ -83,11 +86,16 @@ to write a ton of new page structure.
                 </div>
             </div>
         </div>
+
+        <!-- Project Screens -->
         <div class="page-content project-screens">
             <div class="max-w-[980px] mx-auto relative">
+                <!-- Laptop -->
                 <div class="laptop-overlay">
                     <img src="{{ site.baseurl }}assets/images/laptop.svg" class="w-full h-auto">
                 </div>
+
+                <!-- Carousel -->
                 <div class="carousel absolute bottom-[20%] top-[3.8%] inset-x-[11%]">
                     {% assign i = 0 %}
                     {% for image in page.screenshots %}
@@ -97,6 +105,8 @@ to write a ton of new page structure.
                         </div>
                     {% endfor %}
                 </div>
+
+                <!-- Carousel Controls -->
                 <div class="flex justify-center w-full py-2 pt-8 gap-2">
                     {% assign n = 0 %}
                     {% for image in page.screenshots %}
