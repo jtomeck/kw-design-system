@@ -101,7 +101,7 @@ to write a ton of new page structure.
                     {% for image in page.screenshots %}
                         {% assign i = i | plus:1 %}
                         <div id="item{{ i }}" class="carousel-item block h-full overflow-y-auto w-full">
-                            <img src="{{ site.baseurl | append: image }}" class="w-full" />
+                            <img src="{{ image }}" class="w-full" />
                         </div>
                     {% endfor %}
                 </div>
