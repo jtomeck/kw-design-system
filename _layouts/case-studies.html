@@ -89,14 +89,32 @@ to write a ton of new page structure.
 
         <!-- Project Screens -->
         <div class="page-content project-screens">
-            <div class="max-w-[980px] mx-auto relative">
+            <div class="
+                w-[288px]
+                sm:w-[575px]
+                md:w-[672px]
+                lg:w-[648px]
+                xl:w-[808px]
+                2xl:w-[1064px]
+                mx-auto
+                relative
+            ">
                 <!-- Laptop -->
                 <div class="laptop-overlay">
                     <img src="{{ site.baseurl }}assets/images/laptop.svg" class="w-full h-auto">
                 </div>
 
                 <!-- Carousel -->
-                <div class="carousel absolute bottom-[20%] top-[3.8%] inset-x-[11%]">
+                <div class="
+                    carousel
+                    absolute
+                    bottom-[85px] inset-x-[32px] top-[7px]
+                    sm:bottom-[106px] sm:inset-x-[65px] sm:top-[14px]
+                    md:bottom-[113px] md:inset-x-[76px] md:top-[17px]
+                    lg:bottom-[111px] lg:inset-x-[74px] lg:top-[16px]
+                    xl:bottom-[123px] xl:inset-x-[92px] xl:top-[20px]
+                    2xl:bottom-[142px] 2xl:inset-x-[121px] 2xl:top-[27px]
+                ">
                     {% assign i = 0 %}
                     {% for image in page.screenshots %}
                         {% assign i = i | plus:1 %}
