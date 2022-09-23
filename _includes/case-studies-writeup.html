@@ -16,14 +16,47 @@
     </div> 
     
     {% assign c = 0 %}
-    {% for content in page.process %}
+    {% for info in page.process %}
         {% assign c = c | plus:1 %}
         <div
             id="step{{ c }}"
             class="pt-32"
-            x-intersect.threshold.90="visibleSection = 'step' + {{ c }}"
+            x-intersect.threshold.80="visibleSection = 'step' + {{ c }}"
         >
-            <h2>{{ content.title }}</h2>
+            <h1 class="text-center mb-8">
+                {{ info.title }}
+            </h1>
+            {% for content in info.content %}
+                {% if content.type == 'standard' %}
+                    <section class="max-w-[768px] mx-auto py-12">
+                        <div class="col-span-5 flex flex-col justify-center">
+                            <h3 class="pb-3">{{ content.title }}</h3>
+                            <p>{{ content.text }}</p>
+                        </div>
+                        <div class="col-span-7">
+                            <img src="{{ content.image }}">
+                        </div>
+                    </section>
+                {% elsif content.type == 'text-image' %}    
+                    <section class="gap-12 grid grid-cols-12 max-w-[980px] mx-auto py-12">
+                        <div class="col-span-5 flex flex-col justify-center {% if content.img-align == 'left' %}order-2{% endif %}">
+                            <h3 class="pb-3">{{ content.title }}</h3>
+                            <p>{{ content.text }}</p>
+                        </div>
+                        <div class="col-span-7 {% if content.img-align == 'left' %}order-1{% endif %}">
+                            <img src="{{ content.image }}">
+                        </div>
+                    </section>
+                {% elsif content.type == 'image-only' %}
+                    <section class="max-w-[980px] mx-auto py-6">
+                        <div class="gap-8 grid {% if content.grid %}grid-cols-2{% endif %}">
+                            {% for image in content.images %}
+                                <img src="{{ image.url }}">
+                            {% endfor %}
+                        </div>
+                    </section>
+                {% endif %}
+            {% endfor %}
         </div>
     {% endfor %}
 </div>
