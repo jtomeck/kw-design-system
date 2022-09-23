@@ -20,12 +20,12 @@
         {% assign c = c | plus:1 %}
         <div
             id="step{{ c }}"
-            class="pt-32"
-            x-intersect.threshold.80="visibleSection = 'step' + {{ c }}"
+            class=" border-b border-slate-200 py-16"
+            x-intersect.threshold.60="visibleSection = 'step' + {{ c }}"
         >
-            <h1 class="text-center mb-8">
+            <h2 class="text-center mb-8 text-4xl">
                 {{ info.title }}
-            </h1>
+            </h2>
             {% for content in info.content %}
                 {% if content.type == 'standard' %}
                     <section class="max-w-[768px] mx-auto py-12">
