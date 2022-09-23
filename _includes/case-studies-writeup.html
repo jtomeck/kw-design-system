@@ -1,0 +1,29 @@
+<div class="page-content process-writeup" x-data="{ visibleSection: false }">
+    <div class="stepper-wrap sticky bg-base-100/80 backdrop-blur-sm -top-[49px] xl:-top-[64px]">
+        <ul class="steps">
+            {% assign s = 0 %}
+            {% for step in page.process %}
+                {% assign s = s | plus:1 %}
+                <li
+                    class="step cursor-pointer"
+                    :class="visibleSection == 'step' + {{ s }} ? 'step-primary' : ''"
+                    @click="document.getElementById('step' + {{ s }}).scrollIntoView({behavior:'smooth'})"
+                >
+                    {{ step.title }}
+                </li>
+            {% endfor %}
+        </ul>
+    </div> 
+    
+    {% assign c = 0 %}
+    {% for content in page.process %}
+        {% assign c = c | plus:1 %}
+        <div
+            id="step{{ c }}"
+            class="pt-32"
+            x-intersect.threshold.90="visibleSection = 'step' + {{ c }}"
+        >
+            <h2>{{ content.title }}</h2>
+        </div>
+    {% endfor %}
+</div>
