@@ -1,12 +1,12 @@
-<div class="page-content process-writeup" x-data="{ visibleSection: false }">
-    <div class="stepper-wrap sticky bg-base-100/80 backdrop-blur-sm -top-[49px] xl:-top-[64px]">
+<div class="page-content process-writeup !pt-0" x-data="{ visibleSection: false }">
+    <div class="stepper-wrap sticky border-b border-slate-200 bg-gradient-to-bl from-slate-100/90 to-slate-200/90 backdrop-blur-sm overflow-x-auto -top-[33px] md:-top-[49px] xl:-top-[64px]">
         <ul class="steps">
             {% assign s = 0 %}
             {% for step in page.process %}
                 {% assign s = s | plus:1 %}
                 <li
-                    class="step cursor-pointer"
-                    :class="visibleSection == 'step' + {{ s }} ? 'step-primary' : ''"
+                    class="step cursor-pointer font-thin !min-w-[100px]"
+                    :class="visibleSection == 'step' + {{ s }} ? 'step-primary font-semibold' : ''"
                     @click="document.getElementById('step' + {{ s }}).scrollIntoView({behavior:'smooth'})"
                 >
                     {{ step.title }}
@@ -38,7 +38,7 @@
                         </div>
                     </section>
                 {% elsif content.type == 'text-image' %}    
-                    <section class="gap-12 grid grid-cols-12 max-w-[980px] mx-auto py-12">
+                    <section class="gap-6 grid lg:gap-12 lg:grid-cols-12 max-w-[980px] mx-auto py-12">
                         <div class="col-span-5 flex flex-col justify-center {% if content.img-align == 'left' %}order-2{% endif %}">
                             <h3 class="pb-3">{{ content.title }}</h3>
                             <p>{{ content.text }}</p>
@@ -48,8 +48,8 @@
                         </div>
                     </section>
                 {% elsif content.type == 'image-only' %}
-                    <section class="max-w-[980px] mx-auto py-6">
-                        <div class="gap-8 grid {% if content.grid %}grid-cols-2{% endif %}">
+                    <section class="max-w-[980px] mx-auto pb-4 lg:pb-8">
+                        <div class="gap-4 lg:gap-8 grid {% if content.grid %}lg:grid-cols-2{% endif %}">
                             {% for image in content.images %}
                                 <img src="{{ image.url }}">
                             {% endfor %}

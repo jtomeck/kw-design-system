@@ -112,7 +112,7 @@
         }
         &.process-writeup {
           .stepper-wrap {
-            @apply border-b border-slate-200 flex justify-center p-4 -mx-8 md:-mx-12 xl:-mx-24;
+            @apply flex justify-center p-4 -mx-8 md:-mx-12 xl:-mx-24;
           }
         }
       }
