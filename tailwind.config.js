@@ -17,6 +17,7 @@ module.exports = {
     extend: {
       fontSize: {
         '2xs': '.6rem',
+        '4xl': '3.75rem',
       },
       transitionProperty: {
         'bottom': 'bottom',
