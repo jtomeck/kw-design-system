@@ -45,10 +45,10 @@
             pt-8
             gap-2
         ">
-            {% assign n = 0 %}
+            {% assign i = 0 %}
             {% for image in page.screenshots %}
-                {% assign n = n | plus:1 %}
-                <a href="#item{{ n }}" class="btn btn-xs">{{ n }}</a>
+                {% assign i = i | plus:1 %}
+                <a href="#item{{ i }}" class="btn btn-xs">{{ i }}</a>
             {% endfor %}
         </div>
     </div>
