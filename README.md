@@ -41,7 +41,8 @@ To edit the content of the collection pages, you must add it to the frontmatter.
 
 ## Content types and how to use them
 
-### Standard
+### Guildelines content types
+#### Standard
 Use this section type for just normal blocks of text, such as paragraph, unordered lists and numbered lists. You may also use images.
 
 Here is an example of the frontmatter for the standard content section:
@@ -72,11 +73,10 @@ sections:
 ***Please Note** that you are only allowed one subheading and one image per content block. If you want additional, just start a new content block.
 
 This will get you something that looks like this:
-<img width="1018" alt="Screen Shot 2022-02-02 at 4 03 03 PM" src="https://user-images.githubusercontent.com/1560779/152238450-a4c3cbfe-e5b6-490e-97e5-2dc8dd0d3aa0.png">
 
 ---
 
-### List
+#### List
 Use this section type for complex lists. This will show up in a grid and give you the ability to add a subheading, text and image.
 
 The frontmatter for a list section might look like this:
@@ -99,12 +99,10 @@ sections:
           text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et enim id tellus lacinia convallis dictum sit amet arcu. In quis bibendum urna.
           image: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
 ```
-This will get you something that looks like this:
-<img width="1012" alt="Screen Shot 2022-02-02 at 4 07 41 PM" src="https://user-images.githubusercontent.com/1560779/152238387-f1d16c26-f855-463a-952c-ef31a9081d46.png">
 
 ---
 
-### Grid
+#### Grid
 This is basically the same as the list section, without the numbering.
 
 The frontmatter for a grid section might look like this:
@@ -127,10 +125,51 @@ sections:
           text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et enim id tellus lacinia convallis dictum sit amet arcu. In quis bibendum urna.
           image: https://fakeimg.pl/1024x600/?retina=1&text=Screenshot&font=noto
 ```
-This will get you something that looks like this:
-<img width="995" alt="Screen Shot 2022-02-02 at 4 10 17 PM" src="https://user-images.githubusercontent.com/1560779/152238356-f9d73279-5f62-4094-ae5c-0378c7c6ec8c.png">
 
 ---
+
+### Case Study content types
+
+#### Standard
+This will produce a block of text with a title and text:
+```
+process:
+    - title: Lorem Ipsum
+      content:
+        - type: standard
+          title: Lorem Ipsum
+          text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus ultricies leo facilisis varius. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam eget lobortis augue, a maximus turpis. Vestibulum ultrices lacus at placerat pretium. Mauris viverra urna vel porta lacinia.
+```
+
+---
+
+#### Text with Image
+This will produce a block of text with an image on either the left or right (notice the `img-align` property):
+```
+process:
+    - title: Lorem Ipsum
+      content:
+        - type: text-image
+          title: Lorem Ipsum
+          text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque luctus ultricies leo facilisis varius. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam eget lobortis augue, a maximus turpis. Vestibulum ultrices lacus at placerat pretium. Mauris viverra urna vel porta lacinia.
+          image: https://fakeimg.pl/1024x600/?retina=1&text=ResearchImg&font=noto
+          img-align: right
+```
+
+---
+
+#### Image only
+This will produce a block containing as many images as you specify. If the `grid` property exists, it will list the image in a 2 column grid:
+```
+process:
+  - title: Lorem Ipsum
+    content:
+      - type: image-only
+          grid: true
+          images:
+            - url: https://fakeimg.pl/1024x600/?retina=1&text=Wireframe&font=noto
+            - url: https://fakeimg.pl/1024x600/?retina=1&text=Wireframe&font=noto
+```
 
 ## Frameworks & Integrations
 This site uses the following frameworks/integrations:
