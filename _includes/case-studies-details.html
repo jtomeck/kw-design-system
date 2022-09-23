@@ -27,9 +27,16 @@
                 <div class="process card">
                     <div class="card-body">
                         <h3 class="card-title">Process</h3>
-                        <ul>
+                        <ul x-data>
+                            {% assign i = 0 %}
                             {% for process_item in page.process %}
-                            <li>{{ process_item.title }}</li>
+                                {% assign i = i | plus:1 %}
+                                <li
+                                    class="cursor-pointer link link-hover link-secondary"
+                                    @click="document.getElementById('step' + {{ i }}).scrollIntoView({behavior:'smooth'})"
+                                >
+                                    {{ process_item.title }}
+                                </li>
                             {% endfor %}
                         </ul>
                     </div>
