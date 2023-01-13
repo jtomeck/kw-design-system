@@ -4,6 +4,12 @@
 
 /* All Custom CSS here */
 @layer base {
+  html {
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+  
   a {
     @apply decoration-1 underline-offset-4;
   }
