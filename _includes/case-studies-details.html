@@ -31,11 +31,8 @@
                             {% assign i = 0 %}
                             {% for process_item in page.process %}
                                 {% assign i = i | plus:1 %}
-                                <li
-                                    class="cursor-pointer link link-hover link-secondary"
-                                    @click="document.getElementById('step' + {{ i }}).scrollIntoView({behavior:'smooth'})"
-                                >
-                                    {{ process_item.title }}
+                                <li>
+                                    <a href="#{{ process_item.stepid }}" class="link link-hover link-secondary">{{ process_item.title }}</a>
                                 </li>
                             {% endfor %}
                         </ul>
