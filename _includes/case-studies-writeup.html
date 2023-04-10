@@ -1,21 +1,8 @@
 <div class="page-content process-writeup !pt-0">
 
     <!-- Stepper -->
-    <div
-        class="
-            stepper-wrap
-            sticky
-            border-b
-            border-slate-200
-            bg-gradient-to-bl
-            from-slate-100/90
-            to-slate-200/90
-            backdrop-blur-sm
-            overflow-x-auto
-            -top-[33px] md:-top-[49px] xl:-top-[64px]
-        "
-    >
-        <ul class="steps" id="step-nav">
+    <nav class="stepper-wrap sticky border-b border-slate-200 bg-gradient-to-bl from-slate-100/90 to-slate-200/90 backdrop-blur-sm overflow-x-auto -top-[33px] md:-top-[49px] xl:-top-[64px]">
+        <ul id="step-nav" class="steps">
             {% assign i = 0 %}
             {% for step in page.process %}
                 {% assign i = i | plus:1 %}
@@ -24,7 +11,7 @@
                 </a>
             {% endfor %}
         </ul>
-    </div> 
+    </nav> 
     
     <!-- Steps Content-->
     {% assign i = 0 %}
