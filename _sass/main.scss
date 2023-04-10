@@ -124,7 +124,7 @@
         }
         &.process-writeup {
           .stepper-wrap {
-            @apply flex justify-center p-4 -mx-8 md:-mx-12 xl:-mx-24;
+            @apply hidden sm:flex justify-center p-4 -mx-8 md:-mx-12 xl:-mx-24;
           }
         }
       }
