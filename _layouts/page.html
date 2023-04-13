@@ -14,16 +14,19 @@
     <div class="content-wrap">
       <h4 class="leading-5 text-secondary">{{ page.collection }}</h4>
       <h1 class="title">{{ page.title }}</h1>
-      <p class="excerpt mt-6 pt-6 border-t border-gray-600">{{ page.excerpt }}</p>
+      <p class="excerpt mt-6 pt-6 border-t border-slate-600">{{ page.excerpt }}</p>
     </div>
   </div>
 
   <div class="page-content">
-    {% assign collection_name = page.title | downcase %}
-    {% if site[collection_name] %}
+    {% assign collection_name = page.title | downcase | replace: " ", "-" %}
+    {% if site[collection_name] != empty %}
       <div class="cards-grid">
         {% for item in site[collection_name] %}
         <div class="card">
+          {% if collection_name == 'case-studies' %}
+          <figure><img src="{{ item.image }}"></figure>
+          {% endif %}
           <div class="card-body">
             <h3 class="mb-2 text-neutral-focus card-title">{{ item.title }}</h3>
             <p class="mb-0 flex-grow">{{ item.excerpt }}</p>
@@ -38,7 +41,7 @@
         {% endfor %}
       </div>
     {% else %}
-      <div class="text-center p-24 text-2xl font-thin text-gray-400">
+      <div class="text-center p-24 text-2xl font-thin text-slate-400">
         No {{ collection_name }} have been added yet. Please check back later!
       </div>
     {% endif %}

@@ -1,0 +1,51 @@
+---
+---
+
+{% include head.html %}
+
+<!-- Site Header (logo and searchbar) -->
+{% include header.html %}
+
+<!-- Content Area -->
+{% comment %}
+.case-studies container is needed to apply styles strictly to the case studies pages without having
+to write a ton of new page structure.
+{% endcomment %}
+<main class="site-body">
+    {% include drawer_start.html %}
+    <div class="case-studies">
+        <div class="page-hero">
+            <div class="content-wrap">
+                <div class="md:gap-20 md:grid md:grid-cols-2">
+                    <div class="flex flex-col justify-center">
+                        <h4 class="leading-5 text-secondary">{{ page.collection }}</h4>
+                        <h1 class="title">{{ page.title }}</h1>
+
+                        <p class="excerpt">{{ page.excerpt }}</p>
+                    </div>
+                    <div>
+                        <img src="{{ page.image }}" class="w-full h-auto shadow-xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Details -->
+        {% include case-studies-details.html %}
+
+        <!-- Project Screens -->
+        {% include case-studies-screens.html %}
+
+        <!-- Project Writeup -->
+        {% include case-studies-writeup.html %}
+
+        <div class="bg-white border-t-[4px] border-secondary max-w-[980px] mx-auto mt-24 shadow-xl">
+            {% include contact_cta.html %}
+        </div>
+    </div>
+
+    {% include drawer_end.html %}
+</main>
+</div>
+
+{% include footer.html %}

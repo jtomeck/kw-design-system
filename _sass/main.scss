@@ -4,8 +4,20 @@
 
 /* All Custom CSS here */
 @layer base {
+  html {
+    * {
+      scroll-behavior: smooth;
+    }
+  }
+  
   a {
     @apply decoration-1 underline-offset-4;
+  }
+
+  html {
+    * {
+      scroll-behavior: smooth;
+    }
   }
 
   body {
@@ -20,7 +32,7 @@
 
     /* Styles for the whitespace call to action to toggle whitespace */
     .no-whitespace-cta {
-      @apply bg-gray-600 border border-gray-500 text-white p-4 mt-12 md:flex items-center justify-center;
+      @apply bg-slate-600 border border-slate-500 text-white p-4 mt-12 md:flex items-center justify-center;
       .btn {
         @apply my-2 md:my-0 md:ml-4;
       }
@@ -77,13 +89,54 @@
       @apply mb-10;
     }
 
+    .case-studies {
+      .page-hero {
+        .excerpt {
+          @apply border-t border-slate-600 pt-4 my-8;
+        }
+      }
+      .page-content {
+        &.project-details {
+          @apply pb-12;
+          .overview {
+            @apply bg-white border-l-4 border-secondary p-6 mt-12 px-10 shadow-lg;
+            h2 {
+              @apply mb-4;
+            }
+            p {
+              @apply text-xl font-thin;
+            }
+          }
+          
+          .project-info {
+            .card {
+              .card-body {
+                @apply pb-0;
+              }
+            }
+          }
+        }
+        &.project-screens {
+          @apply bg-gradient-to-tl from-slate-300 to-slate-200 p-4 -mx-8 sm:p-8 md:p-12 md:-mx-12 xl:-mx-24 xl:px-24 xl:py-16;
+          .laptop-overlay {
+            @apply pointer-events-none relative z-20;
+          }
+        }
+        &.process-writeup {
+          .stepper-wrap {
+            @apply hidden sm:flex justify-center p-4 -mx-8 md:-mx-12 xl:-mx-24;
+          }
+        }
+      }
+    }
+
     .page-hero {
       @apply bg-gradient-to-b from-neutral-focus to-neutral p-8 -mx-8 -mt-8 md:p-12 md:-mx-12 md:-mt-12 text-white xl:-mx-24 xl:-mt-16 xl:px-24 xl:py-16;
       .title {
         @apply text-white;
       }
       .definition {
-        @apply border-b text-gray-400 border-gray-600 border-t my-8 pb-6 pt-4;
+        @apply border-b text-slate-400 border-slate-600 border-t my-8 pb-6 pt-4;
       }
       .excerpt {
         @apply font-thin text-xl;
@@ -95,11 +148,11 @@
     }
   
     .content-wrap {
-      @apply xl:max-w-[1280px] w-full;
+      @apply xl:max-w-[1440px] mx-auto w-full;
     }
 
     .cards-grid {
-      @apply grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6 xl:auto-rows-fr xl:max-w-[1280px];
+      @apply grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-6 xl:auto-rows-fr xl:max-w-[1440px] mx-auto;
       > .card,
       > div > .card {
         @apply bg-white border-t-4 border-secondary drop-shadow-xl;
@@ -149,7 +202,7 @@
           }
         }
         p {
-          @apply mb-0 text-xs text-gray-400;
+          @apply mb-0 text-xs text-slate-400;
         }
       }
     }
