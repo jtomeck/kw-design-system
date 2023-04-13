@@ -20,7 +20,7 @@
 
   <div class="page-content">
     {% assign collection_name = page.title | downcase | replace: " ", "-" %}
-    {% if site[collection_name] %}
+    {% if site[collection_name] != empty %}
       <div class="cards-grid">
         {% for item in site[collection_name] %}
         <div class="card">
